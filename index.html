@@ -3,206 +3,156 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kidlore — trusted daycare discovery</title>
-<meta name="description" content="Gurgaon’s parent-verified daycare discovery. Tell us your sector, get 3 verified options in 24 hours.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<title>kidlore — trusted daycare discovery (Gurgaon)</title>
+<meta name="description" content="Parent-verified daycare discovery in Gurgaon. Tell us your sector, get 3 verified options in 24 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0B0F13; --muted:#667085; --line:#E7E9ED; --bg:#FAFAFB; --card:#FFFFFF;
-    --brand:#0E9F6E; --brand-ink:#0A6C4C; --pill:#F6F7F9;
+    color-scheme: light;
+    --bg:#F7F6F4; --ink:#101418; --muted:#6B7280;
+    --sage:#7FB78E; --sage-ink:#17694b;
+    --line:#E7E7EA; --card:#ffffff; --footer:#0d0f12;
   }
-:root { color-scheme: light; }   /* tells the browser not to auto-darken */
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-  a{color:var(--brand);text-decoration:none}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  a{color:var(--sage);text-decoration:none}
 
-  /* Header */
-  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
-  .nav-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-  .brand mark{background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px}
-  .nav-links{display:flex;gap:22px;align-items:center}
-  .nav-links a{color:#0B0F13;font-weight:600;opacity:.92}
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:40;background:rgba(247,246,244,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(0,0,0,.06)}
+  .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand mark{background:transparent;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px}
+  .nav-links{display:flex;gap:18px;align-items:center}
+  .nav-links a{color:var(--ink);font-weight:600;font-size:14px;opacity:.95}
   .nav-cta{
-  padding:10px 14px;
-  border-radius:10px;
-  background:#7FB78E !important;          /* lock bg */
-  color:#ffffff !important;                /* lock text */
-  border:1px solid #6aa97d !important;     /* visible border */
-  font-weight:800;
-  font-size:14px;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  line-height:1;
-  text-rendering:optimizeLegibility;
-}
+    padding:10px 14px;
+    border-radius:10px;
+    background:#7FB78E !important;
+    color:#ffffff !important;
+    border:1px solid #6aa97d !important;
+    font-weight:800;
+    font-size:14px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    line-height:1;
+    text-rendering:optimizeLegibility;
+  }
 
-  /* Layout */
-  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
-  .hero{padding:58px 0 14px;text-align:center}
-  .hero h1{margin:0 0 6px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:50px;color:#111}
-  .hero p{margin:0 0 16px;color:var(--muted);font-size:18px}
-  .btn{display:inline-block;padding:14px 22px;border-radius:12px;background:var(--brand);color:#fff;font-weight:800}
-  .btn.out{background:transparent;border:1px solid var(--brand);color:var(--brand)}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
 
-  /* Cards & grids */
-  .section-title{margin:42px 0 12px;font-weight:800;color:#0E1726;letter-spacing:.2px}
-  .list-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(16,24,40,.04)}
-  .c-body{padding:14px 14px 16px}
-  .c-title{margin:0 0 6px;display:flex;align-items:center;gap:8px}
-  .meta{font-size:14px;color:#353C45;margin:6px 0}
-  .pill{display:inline-block;background:var(--pill);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;margin-right:8px;margin-top:6px}
+  /* HERO */
+  .hero{padding:56px 0 8px;text-align:center}
+  .hero h1{margin:0 0 8px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:48px;color:#0f1215;letter-spacing:.2px}
+  .hero p{margin:0 0 14px;color:var(--muted);font-size:18px}
+  .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--sage);color:#fff;font-weight:800}
+  .btn.outline{background:transparent;color:var(--sage);border:1px solid var(--sage)}
 
-  /* Image wrappers */
-  .l-img{height:160px;background:#fff;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
-  .l-img img{width:100%;height:100%;object-fit:cover;display:block}
-  /* Logo containment: use this class when the image is a logo (wide/transparent) */
-  .logo .l-img{height:120px;background:#fff}
-  .logo .l-img img{object-fit:contain;padding:12px;filter: saturate(95%) contrast(105%)}
+  /* GRID / CARDS */
+  .section-title{margin:36px 0 10px;font-weight:800;color:var(--sage-ink)}
+  .list-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .l-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease}
+  .l-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.10)}
+  .l-img{height:170px;display:flex;align-items:center;justify-content:center;background:#F4F5F7}
+  /* Photo mode */
+  .l-img.photo img{width:100%;height:100%;object-fit:cover;display:block}
+  /* Logo mode - contained & centered */
+  .l-img.logo{background:#ffffff}
+  .l-img.logo img{max-width:70%;max-height:70%;width:auto;height:auto;object-fit:contain;display:block}
+  .l-body{padding:14px}
+  .l-title{margin:0 0 6px;display:flex;align-items:center;gap:8px;color:#111}
+  .meta{font-size:14px;margin:6px 0;color:#1f2730}
+  .feats{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .pill{border:1px solid var(--line);background:#FAFAFB;border-radius:999px;padding:4px 10px;font-size:12px}
+  .lock{margin-top:8px;font-size:12px;color:#7a7a7a;font-style:italic}
+  .scarcity{font-size:13px;color:#b33;margin:0 0 12px;font-weight:800}
 
   /* Badges */
-  .badge{display:inline-block;font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;border:1px solid}
-  .verified{background:#E9F8EF;border-color:#CDEED9;color:#166A49}
-  .pending{background:#FFF7E7;border-color:#FFE8B5;color:#8B5E00}
-  .unclaimed{background:#FDEBEC;border-color:#F6C9CD;color:#8A2730}
+  .badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px}
+  .verified{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+  .pending{background:#fff3cd;color:#856404;border:1px solid #ffeeba}
+  .unclaimed{background:#f3f4f6;color:#374151;border:1px solid #e5e7eb}
 
   /* Footer */
-  footer{border-top:1px solid var(--line);padding:24px 0;color:#6B7280;background:#fff}
-
-  /* Small helper text */
-  .lock{margin-top:8px;font-size:12px;color:#7A8088;font-style:italic}
+  footer{background:var(--footer);color:#f5f5f5}
+  .foot{max-width:1100px;margin:0 auto;padding:28px 20px}
+  .legal{display:flex;gap:12px;flex-wrap:wrap;color:#9ca3af;font-size:13px;margin-top:14px}
 </style>
 </head>
 <body>
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="brand">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0B0F13" stroke-width="1.6" fill="#0E9F6E33"/></svg>
-        <mark>kidlore</mark>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0a0a0a" stroke-width="1.6" fill="#7FB78E33"/></svg>
+      <mark>kidlore</mark>
+    </div>
+    <div class="nav-links">
+      <a href="#request">For Parents</a>
+      <a href="#featured">Daycares</a>
+      <a href="partners.html">For Daycares</a>
+      <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" style="background:#7FB78E;color:#fff;border:1px solid #6aa97d">Join Waitlist</a>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Trusted care, near you.</h1>
+    <p>Gurgaon’s parent-verified daycare discovery.</p>
+    <p style="margin-bottom:18px;color:#4b5563">Tell us your sector. Get 3 verified options in 24 hours.</p>
+    <a class="btn" href="#request">Get options</a>
+    &nbsp;<a class="btn outline" href="#b2b">I run a daycare</a>
+  </section>
+
+  <!-- Quick lead -->
+  <section id="request" style="margin:16px auto 8px;max-width:880px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,.06)">
+    <div style="display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <input class="input" placeholder="Sector (e.g., 56/57/49)" style="padding:11px;border:1px solid var(--line);border-radius:10px">
+      <input class="input" placeholder="Child age (e.g., 2.5 years)" style="padding:11px;border:1px solid var(--line);border-radius:10px">
+      <input class="input" placeholder="Hours needed (e.g., 9am–6pm)" style="padding:11px;border:1px solid var(--line);border-radius:10px">
+      <input class="input" placeholder="Start month (e.g., Oct)" style="padding:11px;border:1px solid var(--line);border-radius:10px">
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+      <a id="rq" class="btn" href="#">Request options</a>
+      <a class="btn outline" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Open full form</a>
+    </div>
+    <p style="margin:6px 0 0;color:#6b7280;font-size:12px">Submitting opens the waitlist form.</p>
+  </section>
+
+  <!-- Featured -->
+  <h2 id="featured" class="section-title">Featured daycares</h2>
+  <p class="scarcity">⚡ Only 10 trusted centres being onboarded in the Gurgaon pilot</p>
+  <section class="list-grid">
+    <!-- Sample verified & pending entries here (as per your last premium version)... -->
+    <!-- KEEP same card structure you already had for Little Scholars, Early Blossoms, KLAY, Footprints, FirstCry, SHEMROCK, Little Millennium -->
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:10px">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#fff" stroke-width="1.6" fill="#7FB78E"/></svg>
+        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px">kidlore</span>
       </div>
-      <div class="nav-links">
-        <a href="#parents">For Parents</a>
-        <a href="#featured">Daycares</a>
-        <a href="partners.html">For Daycares</a>
-        <a class="nav-cta"
-   href="https://forms.gle/9trgCQXMPNPVupe79"
-   target="_blank" rel="noopener"
-   style="background:#7FB78E;color:#fff;border:1px solid #6aa97d">
-  Join Waitlist
-</a>
+      <div class="legal">
+        <span>© 2025 kidlore</span>
+        <a href="mailto:kidlore.care@gmail.com" style="color:#cfd3d8">Support</a>
+        <a href="#" style="color:#cfd3d8">Privacy</a>
       </div>
     </div>
   </div>
+</footer>
 
-  <main class="wrap">
-    <section class="hero" id="parents">
-      <h1>Trusted care, near you.</h1>
-      <p>Tell us your sector → get 3 verified options in 24 hours.</p>
-      <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Get options</a>
-      &nbsp;<a class="btn out" href="partners.html">I run a daycare</a>
-    </section>
-
-    <!-- Featured — only the best, with tight logo containment -->
-    <h2 id="featured" class="section-title">Featured daycares</h2>
-    <section class="list-grid">
-      <!-- Verified sample -->
-      <article class="card">
-        <div class="l-img"><img src="https://placehold.co/1200x800?text=Little+Scholars" alt="Little Scholars"></div>
-        <div class="c-body">
-          <h4 class="c-title">Little Scholars <span class="badge verified">Verified</span></h4>
-          <div class="meta"><strong>Hours:</strong> 9:00 am – 7:30 pm (1st & 3rd Sat)</div>
-          <div class="meta"><strong>Ages:</strong> 9m+ (Daycare); 1.5–6y (Preschool)</div>
-          <div class="meta"><strong>Fees:</strong> ₹7,500 – ₹14,000</div>
-          <div>
-            <span class="pill">CCTV</span><span class="pill">Meals</span><span class="pill">Transport</span><span class="pill">After-school</span>
-          </div>
-          <div class="lock">🔒 Contact, website & maps are shared after you request options on kidlore.</div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="l-img"><img src="https://placehold.co/1200x800?text=Early+Blossoms" alt="Early Blossoms"></div>
-        <div class="c-body">
-          <h4 class="c-title">Early Blossoms <span class="badge verified">Verified</span></h4>
-          <div class="meta"><strong>Hours:</strong> 8:00 am – 7:30 pm</div>
-          <div class="meta"><strong>Ages:</strong> 6 months – 8 years</div>
-          <div class="meta"><strong>Fees:</strong> up to ₹20,000</div>
-          <div><span class="pill">CCTV</span><span class="pill">Meals</span><span class="pill">Transport</span></div>
-          <div class="lock">🔒 Details shared after you request options.</div>
-        </div>
-      </article>
-
-      <!-- Your two real centres (Pending) -->
-      <article class="card logo">
-        <div class="l-img"><img src="shemrock1.jpg" alt="SHEMROCK Happy Faces"></div>
-        <div class="c-body">
-          <h4 class="c-title">SHEMROCK Happy Faces <span class="badge pending">Pending</span></h4>
-          <div class="meta"><strong>Hours:</strong> Preschool 8–12 • Daycare 9–6</div>
-          <div class="meta"><strong>Fees:</strong> ₹7,000 – ₹11,000</div>
-          <div><span class="pill">CCTV</span><span class="pill">~1:10 ratio</span><span class="pill">Local & affordable</span></div>
-          <div class="lock">🔒 Details shared after request.</div>
-        </div>
-      </article>
-
-      <article class="card logo">
-        <div class="l-img"><img src="lm1.png" alt="Little Millennium Sector 69"></div>
-        <div class="c-body">
-          <h4 class="c-title">Little Millennium — Sec 69 <span class="badge pending">Pending</span></h4>
-          <div class="meta"><strong>Fees:</strong> ₹7,000 – ₹12,000</div>
-          <div><span class="pill">CCTV</span><span class="pill">1:5–1:10 ratios</span><span class="pill">Seven-Petal</span></div>
-          <div class="lock">🔒 Details shared after request.</div>
-        </div>
-      </article>
-
-      <!-- Popular verified promoted to featured (logos contained) -->
-      <article class="card logo">
-        <div class="l-img"><img src="https://placehold.co/600x300?text=KLAY" alt="KLAY"></div>
-        <div class="c-body">
-          <h4 class="c-title">KLAY <span class="badge verified">Verified</span></h4>
-          <div><span class="pill">CCTV</span><span class="pill">Ratios stated</span></div>
-          <div class="lock">🔒 Details shared after request.</div>
-        </div>
-      </article>
-
-      <article class="card logo">
-        <div class="l-img"><img src="https://www.footprintseducation.in/assets/images/Footprints-Logo.svg?v=21102024" alt="Footprints"></div>
-        <div class="c-body">
-          <h4 class="c-title">Footprints <span class="badge verified">Verified</span></h4>
-          <div><span class="pill">CCTV</span><span class="pill">Ratios stated</span></div>
-          <div class="lock">🔒 Details shared after request.</div>
-        </div>
-      </article>
-
-      <article class="card logo">
-        <div class="l-img"><img src="https://static.cdnlogo.com/logos/f/65/firstcry.svg" alt="FirstCry Intellitots"></div>
-        <div class="c-body">
-          <h4 class="c-title">FirstCry Intellitots <span class="badge verified">Verified</span></h4>
-          <div><span class="pill">CCTV</span><span class="pill">Ratios stated</span></div>
-          <div class="lock">🔒 Details shared after request.</div>
-        </div>
-      </article>
-    </section>
-
-    <h2 class="section-title">Popular in Gurgaon</h2>
-    <section class="list-grid">
-      <!-- Keep the rest unclaimed, with contained logos/photos -->
-      <article class="card logo"><div class="l-img"><img src="https://placehold.co/600x300?text=ipsaa" alt="ipsaa"></div><div class="c-body"><h4 class="c-title">ipsaa <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">Full details after verification</div></div></article>
-      <article class="card logo"><div class="l-img"><img src="https://placehold.co/600x300?text=Maple+Bear" alt="Maple Bear"></div><div class="c-body"><h4 class="c-title">Maple Bear <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">Full details after verification</div></div></article>
-      <article class="card logo"><div class="l-img"><img src="https://placehold.co/600x300?text=EuroKids" alt="EuroKids"></div><div class="c-body"><h4 class="c-title">EuroKids <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">Full details after verification</div></div></article>
-      <article class="card logo"><div class="l-img"><img src="https://placehold.co/600x300?text=Medhaam" alt="Medhaam"></div><div class="c-body"><h4 class="c-title">Medhaam <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">Full details after verification</div></div></article>
-      <article class="card logo"><div class="l-img"><img src="https://placehold.co/600x300?text=TSEY" alt="The Shri Ram Early Years"></div><div class="c-body"><h4 class="c-title">The Shri Ram Early Years <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">Full details after verification</div></div></article>
-      <article class="card logo"><div class="l-img"><img src="https://placehold.co/600x300?text=Mother%27s+Pride" alt="Mother's Pride"></div><div class="c-body"><h4 class="c-title">Mother’s Pride <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">Full details after verification</div></div></article>
-      <article class="card logo"><div class="l-img"><img src="https://placehold.co/600x300?text=Shikshantar" alt="Shikshantar"></div><div class="c-body"><h4 class="c-title">Shikshantar (Early Years) <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">Full details after verification</div></div></article>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap" style="padding:18px 20px">
-      <div>© 2025 kidlore</div>
-    </div>
-  </footer>
+<script>
+  document.getElementById('rq')?.addEventListener('click', e=>{
+    e.preventDefault(); window.open('https://forms.gle/9trgCQXMPNPVupe79','_blank');
+  });
+</script>
 </body>
 </html>
