@@ -11,6 +11,7 @@
     --ink:#0B0F13; --muted:#667085; --line:#E7E9ED; --bg:#FAFAFB; --card:#FFFFFF;
     --brand:#0E9F6E; --brand-ink:#0A6C4C; --pill:#F6F7F9;
   }
+:root { color-scheme: light; }   /* tells the browser not to auto-darken */
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
@@ -23,7 +24,20 @@
   .brand mark{background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px}
   .nav-links{display:flex;gap:22px;align-items:center}
   .nav-links a{color:#0B0F13;font-weight:600;opacity:.92}
-  .nav-cta{padding:10px 14px;border-radius:12px;background:var(--ink);color:#fff;font-weight:800}
+  .nav-cta{
+  padding:10px 14px;
+  border-radius:10px;
+  background:#7FB78E !important;          /* lock bg */
+  color:#ffffff !important;                /* lock text */
+  border:1px solid #6aa97d !important;     /* visible border */
+  font-weight:800;
+  font-size:14px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  line-height:1;
+  text-rendering:optimizeLegibility;
+}
 
   /* Layout */
   .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
@@ -73,7 +87,12 @@
         <a href="#parents">For Parents</a>
         <a href="#featured">Daycares</a>
         <a href="partners.html">For Daycares</a>
-        <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join Waitlist</a>
+        <a class="nav-cta"
+   href="https://forms.gle/9trgCQXMPNPVupe79"
+   target="_blank" rel="noopener"
+   style="background:#7FB78E;color:#fff;border:1px solid #6aa97d">
+  Join Waitlist
+</a>
       </div>
     </div>
   </div>
