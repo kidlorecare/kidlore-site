@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Not found — kidlore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=./index.html">
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#F8F5F2;color:#111} .box{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.06);max-width:520px} .btn{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:#7FB78E;color:#fff;text-decoration:none;font-weight:700}</style>
+</head>
+<body>
+  <div class="box">
+    <h1>Redirecting…</h1>
+    <p>If you’re not redirected automatically, click below to go home.</p>
+    <a class="btn" href="./index.html">Go to kidlore home</a>
+  </div>
+  <script>
+    // If this was a daycare profile deep link, try to preserve ?slug when jumping to the profile page
+    const p = new URL(location.href);
+    const slug = p.searchParams.get('slug');
+    if (slug) { location.replace('./daycare.html?slug=' + encodeURIComponent(slug)); }
+  </script>
+</body>
+</html>
