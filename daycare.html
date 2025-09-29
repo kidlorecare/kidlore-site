@@ -1,132 +1,330 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kidlore — Daycare profile</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
-<style>
-  :root{--ink:#0B0F13;--muted:#667085;--line:#E7E9ED;--bg:#FAFAFB;--card:#FFFFFF;--brand:#0E9F6E}
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-  a{color:var(--brand);text-decoration:none}
-  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
-  .nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.8);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
-  .nav-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
-  .brand{display:flex;align-items:center;gap:10px}
-  .brand mark{background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px}
-  .title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 2px}
-  .badge{display:inline-block;font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;border:1px solid}
-  .verified{background:#E9F8EF;border-color:#CDEED9;color:#166A49}
-  .pending{background:#FFF7E7;border-color:#FFE8B5;color:#8B5E00}
-  .unclaimed{background:#FDEBEC;border-color:#F6C9CD;color:#8A2730}
-  .sub{color:var(--muted)}
-  .grid{display:grid;gap:20px;grid-template-columns:2fr 3fr}
-  @media (max-width:900px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 8px 28px rgba(16,24,40,.04)}
-  .g-main{height:320px;border-radius:12px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
-  .g-main img{width:100%;height:100%;object-fit:contain;padding:12px}
-  .thumbs{display:grid;gap:10px;grid-template-columns:repeat(4,1fr);margin-top:10px}
-  .thumbs img{width:100%;height:70px;object-fit:contain;border:1px solid var(--line);border-radius:10px;background:#fff;padding:6px}
-  .meta{margin:6px 0;font-size:15px}
-  .pills{display:flex;gap:8px;flex-wrap:wrap}
-  .pill{background:#F6F7F9;border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px}
-  .lock{margin-top:10px;font-size:12px;color:#7A8088;font-style:italic}
-  footer{border-top:1px solid var(--line);padding:24px 0;color:#6B7280;background:#fff}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kidlore — Daycare Profile</title>
+  <meta name="description" content="Parent-verified daycare profiles for Gurgaon. See hours, ages, features and what we verify.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F8F5F2; --ink:#1f2937; --muted:#6b7280;
+      --sage:#7FB78E; --sage-ink:#17694b;
+      --line:#e5e7eb; --card:#ffffff; --footer:#0e0e0e;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    a{color:var(--sage);text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px 20px 72px}
+
+    /* Sticky nav */
+    .nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);background:rgba(248,245,242,.78);border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav-inner{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand mark{background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--ink);font-weight:600;font-size:14px;opacity:.95}
+    .nav-cta{padding:10px 14px;border-radius:10px;background:var(--sage);color:#fff;font-weight:700;font-size:14px}
+    .hamburger{display:none;width:24px;height:24px;cursor:pointer}
+    .hamburger span{display:block;height:2px;background:#111;margin:5px 0;border-radius:2px}
+    @media (max-width:860px){ .nav-links{display:none} .hamburger{display:block} }
+    .mobile-panel{display:none;position:fixed;inset:0;background:#ffffff;z-index:45;padding:20px}
+    .mobile-panel a{display:block;padding:14px 6px;border-bottom:1px solid var(--line);color:#111;font-weight:600}
+    .mobile-panel .close{position:absolute;top:14px;right:20px;font-size:14px;color:#555}
+
+    /* Hero */
+    .hero{padding:54px 0 10px}
+    .title{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 6px}
+    .title h1{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:40px;color:#111}
+    .badge{display:inline-block;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
+    .verified{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+    .pending{background:#fff3cd;color:#856404;border:1px solid #ffeeba}
+    .unclaimed{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb}
+    .sub{color:var(--muted);margin:0 0 12px}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--sage);color:#fff;font-weight:800}
+    .btn.outline{background:transparent;color:var(--sage);border:1px solid var(--sage)}
+    .back{font-size:14px}
+
+    /* Gallery + info */
+    .grid{display:grid;gap:18px;grid-template-columns:2fr 3fr}
+    @media (max-width:860px){ .grid{grid-template-columns:1fr} }
+    .gallery{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}
+    .g-main{height:280px;border-radius:10px;overflow:hidden;background:#f5f5f5}
+    .g-main img{width:100%;height:100%;object-fit:cover;display:block}
+    .thumbs{display:grid;gap:10px;grid-template-columns:repeat(4,1fr);margin-top:10px}
+    .thumbs img{width:100%;height:70px;object-fit:cover;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+
+    .info{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .k-meta{margin:6px 0;font-size:15px}
+    .feats{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .pill{border:1px solid var(--line);background:#fafafa;border-radius:999px;padding:4px 10px;font-size:12px}
+
+    /* Verified explainer */
+    .verify-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+    .verify-box h3{margin:0 0 6px;color:var(--sage-ink)}
+    .verify-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .verify-pill{border:1px solid #e8e8e8;border-radius:999px;padding:4px 10px;font-size:12px;background:#fafafa}
+    .verify-note{font-size:12px;color:#888;margin-top:6px}
+
+    /* Lock panel */
+    .lock{margin-top:10px;font-size:13px;color:#7a7a7a;font-style:italic}
+    .lock-box{background:#fff;border:1px dashed #d1d5db;border-radius:12px;padding:12px;margin-top:12px}
+
+    /* Footer */
+    footer{background:var(--footer);color:#f5f5f5;margin-top:36px}
+    .foot{max-width:1080px;margin:0 auto;padding:26px 20px}
+    .foot-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:12px}
+    .foot h4{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:#eaeaea}
+    .foot a{color:#d1d5db;display:block;padding:6px 0;font-size:14px}
+    .foot a:hover{color:#fff}
+    .foot-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .country{display:flex;align-items:center;gap:8px;color:#e5e7eb;font-size:14px}
+    .country .dot{width:6px;height:6px;border-radius:999px;background:#34d399;display:inline-block}
+    .legal{display:flex;gap:12px;flex-wrap:wrap;color:#9ca3af;font-size:13px;margin-top:10px}
+    .social{display:flex;gap:12px}
+    .s-ico{width:22px;height:22px;display:inline-block}
+  </style>
 </head>
 <body>
+
+  <!-- Sticky nav -->
   <div class="nav">
     <div class="nav-inner">
       <div class="brand">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0B0F13" stroke-width="1.6" fill="#0E9F6E33"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0a0a0a" stroke-width="1.6" fill="#7FB78E33"/></svg>
         <mark>kidlore</mark>
       </div>
-      <a href="index.html">← Back to listings</a>
+      <div class="nav-links">
+        <a href="index.html#request">For Parents</a>
+        <a href="index.html#featured">Daycares</a>
+        <a href="partners.html">For Daycares</a>
+        <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join Waitlist</a>
+      </div>
+      <div id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></div>
     </div>
   </div>
 
-  <main class="wrap">
-    <div class="title">
-      <h1 id="dcName" style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:40px">Daycare</h1>
-      <span id="dcBadge" class="badge pending">Pending</span>
-    </div>
-    <p id="dcLocality" class="sub">Gurgaon</p>
+  <!-- Mobile panel -->
+  <div id="mPanel" class="mobile-panel" aria-hidden="true">
+    <a href="#" class="close" id="mClose">Close ✕</a>
+    <a href="index.html#request">For Parents</a>
+    <a href="index.html#featured">Daycares</a>
+    <a href="partners.html">For Daycares</a>
+    <a href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join Waitlist</a>
+  </div>
 
-    <section class="grid" style="margin-top:12px">
-      <div class="card">
-        <div class="g-main"><img id="gMain" alt="daycare image"></div>
+  <main class="wrap">
+    <p class="back"><a href="index.html">← Back to listings</a></p>
+
+    <!-- Dynamic profile -->
+    <section class="hero">
+      <div class="title">
+        <h1 id="dcName">Daycare</h1>
+        <span id="dcBadge" class="badge pending">Pending</span>
+      </div>
+      <p id="dcLocality" class="sub">Gurgaon</p>
+      <div class="cta-row">
+        <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Request contact</a>
+        <!-- WhatsApp to kidlore (replace with your E.164 number, e.g., 9198XXXXXXXX) -->
+        <a class="btn outline" id="waBtn" href="https://wa.me/9643807790?text=Hi%20kidlore%2C%20I%27m%20interested%20in%20this%20daycare." target="_blank" rel="noopener">WhatsApp kidlore</a>
+      </div>
+    </section>
+
+    <!-- Verified explainer -->
+    <div id="verifyExplainer" class="verify-box" style="display:none">
+      <h3>What “Verified by kidlore” means</h3>
+      <div class="verify-list">
+        <span class="verify-pill">Registration document seen</span>
+        <span class="verify-pill">CCTV present</span>
+        <span class="verify-pill">Staff ratio stated</span>
+        <span class="verify-pill">Hygiene & meals check</span>
+      </div>
+      <p id="verifyDate" class="verify-note">Last checked: Sep 2025</p>
+    </div>
+
+    <!-- Gallery + Info -->
+    <section class="grid" style="margin-top:16px">
+      <div class="gallery">
+        <div class="g-main"><img id="gMain" src="https://placehold.co/1200x800?text=Daycare+Photo" alt="Daycare photo"></div>
         <div id="thumbs" class="thumbs"></div>
       </div>
-      <div class="card">
-        <div id="dcHours" class="meta"><strong>Hours:</strong> —</div>
-        <div id="dcAges" class="meta"><strong>Ages:</strong> —</div>
-        <div id="dcFees" class="meta"><strong>Fees:</strong> —</div>
-        <div id="dcFeats" class="pills" style="margin-top:8px"></div>
 
-        <div class="lock">🔒 Contact, website & maps are shared after you request options on kidlore.</div>
-        <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="badge" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" style="background:#0E9F6E;color:#fff;border-color:#0E9F6E">Request options</a>
-          <a id="waBtn" class="badge" href="#" target="_blank" rel="noopener" style="background:transparent;border-color:#0E9F6E;color:#0E9F6E">WhatsApp kidlore</a>
+      <div class="info">
+        <div id="dcHours" class="k-meta"><strong>Hours:</strong> —</div>
+        <div id="dcAges" class="k-meta"><strong>Ages:</strong> —</div>
+        <div id="dcFees" class="k-meta"><strong>Fees:</strong> —</div>
+        <div id="dcFeats" class="feats"></div>
+
+        <div class="lock-box">
+          <div class="lock">🔒 Contact, website & maps are shared after you request options on kidlore.</div>
+          <div class="cta-row" style="margin-top:8px">
+            <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Get 3 options</a>
+            <a class="btn outline" id="waBtn2" href="https://wa.me/9643807790?text=Hi%20kidlore%2C%20help%20me%20with%203%20verified%20options." target="_blank" rel="noopener">WhatsApp kidlore</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="wrap" style="padding:18px 20px">© 2025 kidlore</div></footer>
+  <!-- Footer (same style as homepage) -->
+  <footer>
+    <div class="foot">
+      <div class="foot-top">
+        <div class="brand" style="color:#fff">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#fff" stroke-width="1.6" fill="#7FB78E"/></svg>
+          <mark style="color:#fff;background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px">kidlore</mark>
+        </div>
+        <div class="social">
+          <a class="s-ico" href="https://www.linkedin.com/company/kidlore" target="_blank" aria-label="LinkedIn" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#d1d5db"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h4v1.9h.06c.56-1.06 1.93-2.17 3.97-2.17 4.25 0 5.04 2.8 5.04 6.44V21h-4v-5.3c0-1.26-.03-2.88-1.76-2.88-1.77 0-2.04 1.38-2.04 2.79V21H9z"/></svg>
+          </a>
+          <a class="s-ico" href="https://wa.me/9643807790" target="_blank" aria-label="WhatsApp" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#d1d5db"><path d="M12.04 2C6.57 2 2.2 6.36 2.2 11.83c0 2.09.62 4.04 1.8 5.74L2 22l4.57-1.94a10.02 10.02 0 0 0 5.47 1.6c5.47 0 9.83-4.36 9.83-9.83C21.87 6.36 17.5 2 12.04 2zm0 17.7a7.8 7.8 0 0 1-3.98-1.09l-.29-.17-2.65 1.12.57-2.74-.18-.28A7.77 7.77 0 1 1 12.04 19.7zm4.53-5.86c-.25-.13-1.49-.73-1.72-.82-.23-.09-.4-.13-.57.13-.17.25-.65.82-.8.99-.15.17-.3.19-.55.06-.25-.13-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.36-1.71-.14-.25-.02-.39.11-.52.12-.12.25-.31.38-.46.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.38-.78-1.89-.2-.48-.41-.42-.57-.42l-.49-.01c-.17 0-.45.06-.68.32-.23.25-.9.88-.9 2.14s.93 2.48 1.06 2.65c.13.17 1.83 2.79 4.42 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.49-.61 1.69-1.2.2-.59.2-1.09.14-1.2-.05-.11-.22-.18-.47-.3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-grid">
+        <div>
+          <h4>Discover</h4>
+          <a href="index.html#request">Find by Sector</a>
+          <a href="index.html#featured">Featured Daycares</a>
+          <a href="partners.html">For Daycares</a>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <a href="mailto:kidlore.care@gmail.com">Contact Support</a>
+          <a href="index.html#request">How It Works</a>
+          <a href="index.html#request">Get 3 Options</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="partners.html">About kidlore</a>
+          <a href="#">Careers (soon)</a>
+          <a href="#">Press (soon)</a>
+        </div>
+        <div>
+          <h4>Region</h4>
+          <div class="country"><span class="dot"></span> India</div>
+        </div>
+      </div>
+
+      <div class="legal">
+        <span>© 2025 kidlore. All rights reserved.</span>
+        <a href="#" style="color:#9ca3af">Terms of Use</a>
+        <a href="#" style="color:#9ca3af">Privacy Policy</a>
+        <a href="#" style="color:#9ca3af">Cookie Settings</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // --- Minimal data store (same slugs as your homepage) ---
+    // Mobile nav
+    const ham = document.getElementById('hamburger');
+    const panel = document.getElementById('mPanel');
+    const closeBtn = document.getElementById('mClose');
+    function toggle(open){
+      if(panel){ panel.style.display = open ? 'block':'none'; panel.setAttribute('aria-hidden', open?'false':'true'); }
+      if(ham){ ham.setAttribute('aria-expanded', open?'true':'false'); }
+    }
+    ham?.addEventListener('click', ()=>toggle(true));
+    closeBtn?.addEventListener('click', (e)=>{e.preventDefault();toggle(false)});
+
+    // --- Simple data store ---
     const DB = {
-      "little-scholars": {name:"Little Scholars", locality:"Gurgaon", status:"verified", hours:"9:00 am – 7:30 pm (1st & 3rd Sat)", ages:"9m+; 1.5–6y", fees:"₹7,500 – ₹14,000", features:["CCTV","Meals","Transport","After-school"], photos:["https://placehold.co/1200x800?text=Little+Scholars"]},
-      "early-blossoms": {name:"Early Blossoms", locality:"Gurgaon", status:"verified", hours:"8:00 am – 7:30 pm", ages:"6 months – 8 years", fees:"up to ₹20,000", features:["CCTV","Meals","Transport"], photos:["https://placehold.co/1200x800?text=Early+Blossoms"]},
-
-      "shemrock-happy-faces": {name:"SHEMROCK Happy Faces", locality:"Sector 47, Gurgaon", status:"pending", hours:"Preschool 8–12 • Daycare 9–6", ages:"—", fees:"₹7,000 – ₹11,000", features:["CCTV","~1:10 ratio","Local & affordable"], photos:["shemrock1.jpg"]},
-      "little-millennium-sector-69": {name:"Little Millennium — Sec 69", locality:"Sector 69, Gurgaon", status:"pending", hours:"—", ages:"—", fees:"₹7,000 – ₹12,000", features:["CCTV","1:5–1:10 ratios","Seven-Petal"], photos:["lm1.png"]},
-
-      "klay": {name:"KLAY", locality:"Gurgaon", status:"verified", hours:"—", ages:"—", fees:"—", features:["CCTV","Ratios stated"], photos:["https://placehold.co/600x300?text=KLAY"]},
-      "footprints": {name:"Footprints", locality:"Gurgaon", status:"verified", hours:"—", ages:"—", fees:"—", features:["CCTV","Ratios stated"], photos:["https://www.footprintseducation.in/assets/images/Footprints-Logo.svg?v=21102024"]},
-      "firstcry-intellitots": {name:"FirstCry Intellitots", locality:"Gurgaon", status:"verified", hours:"—", ages:"—", fees:"—", features:["CCTV","Ratios stated"], photos:["https://static.cdnlogo.com/logos/f/65/firstcry.svg"]},
-
-      "ipsaa": {name:"ipsaa", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/600x300?text=ipsaa"]},
-      "maple-bear": {name:"Maple Bear", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/600x300?text=Maple+Bear"]},
-      "eurokids": {name:"EuroKids", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/600x300?text=EuroKids"]},
-      "medhaam": {name:"Medhaam", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/600x300?text=Medhaam"]},
-      "tsey": {name:"The Shri Ram Early Years", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/600x300?text=TSEY"]},
-      "mothers-pride": {name:"Mother's Pride", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/600x300?text=Mother%27s+Pride"]},
-      "shikshantar": {name:"Shikshantar (Early Years)", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/600x300?text=Shikshantar"]}
+      "early-blossoms": {
+        name: "Early Blossoms",
+        locality: "Gurgaon",
+        status: "verified",
+        lastChecked: "Sep 2025",
+        hours: "8:00 am – 7:30 pm",
+        ages: "6 months – 8 years",
+        fees: "Up to ₹20,000 (based on meals & hours)",
+        features: ["CCTV","Meals","Transport"],
+        photos: [
+          "https://placehold.co/1200x800?text=Early+Blossoms+1",
+          "https://placehold.co/1200x800?text=Early+Blossoms+2",
+          "https://placehold.co/1200x800?text=Early+Blossoms+3",
+          "https://placehold.co/1200x800?text=Early+Blossoms+4"
+        ]
+      },
+      "little-scholars": {
+        name: "Little Scholars",
+        locality: "Gurgaon",
+        status: "verified",
+        lastChecked: "Sep 2025",
+        hours: "9:00 am – 7:30 pm (1st & 3rd Saturdays)",
+        ages: "9m+ (Daycare); 1.5–6y (Preschool)",
+        fees: "₹7,500 – ₹14,000",
+        features: ["CCTV","Meals","Transport","After-school"],
+        photos: [
+          "https://placehold.co/1200x800?text=Little+Scholars+1",
+          "https://placehold.co/1200x800?text=Little+Scholars+2",
+          "https://placehold.co/1200x800?text=Little+Scholars+3",
+          "https://placehold.co/1200x800?text=Little+Scholars+4"
+        ]
+      },
+      "klay":           { name:"KLAY", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=KLAY"] },
+      "footprints":     { name:"Footprints", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=Footprints"] },
+      "firstcry-intellitots": { name:"FirstCry Intellitots", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=FirstCry+Intellitots"] },
+      "ipsaa":          { name:"ipsaa", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=ipsaa"] },
+      "maple-bear":     { name:"Maple Bear", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=Maple+Bear"] },
+      "shemrock":       { name:"Shemrock", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=Shemrock"] }
     };
 
     // Helpers
-    const qs = k => new URLSearchParams(location.search).get(k);
-    const el = id => document.getElementById(id);
+    function qs(k){ return new URLSearchParams(location.search).get(k); }
+    function el(id){ return document.getElementById(id); }
 
+    // Render
     (function init(){
       const slug = qs('slug') || 'early-blossoms';
       const data = DB[slug];
-      if(!data){ return; }
+      if(!data){ el('dcName').textContent = 'Daycare'; return; }
 
+      // Title + badge
       el('dcName').textContent = data.name;
       el('dcLocality').textContent = data.locality || 'Gurgaon';
+
       const badge = el('dcBadge');
       badge.className = 'badge ' + (data.status || 'pending');
       badge.textContent = (data.status||'pending').replace(/^\w/, c=>c.toUpperCase());
 
-      el('dcHours').innerHTML = '<strong>Hours:</strong> ' + (data.hours||'—');
-      el('dcAges').innerHTML  = '<strong>Ages:</strong> ' + (data.ages||'—');
-      el('dcFees').innerHTML  = '<strong>Fees:</strong> ' + (data.fees||'—');
+      // Verified explainer
+      if(data.status === 'verified'){
+        const v = el('verifyExplainer');
+        v.style.display = 'block';
+        el('verifyDate').textContent = 'Last checked: ' + (data.lastChecked || '—');
+      }
 
+      // Info
+      el('dcHours').innerHTML = '<strong>Hours:</strong> ' + (data.hours || '—');
+      el('dcAges').innerHTML  = '<strong>Ages:</strong> ' + (data.ages || '—');
+      el('dcFees').innerHTML  = '<strong>Fees:</strong> ' + (data.fees || '—');
+
+      // Features
       const feats = el('dcFeats'); feats.innerHTML='';
-      (data.features||[]).forEach(f=>{ const s=document.createElement('span'); s.className='pill'; s.textContent=f; feats.appendChild(s); });
+      (data.features||[]).forEach(f=>{
+        const s = document.createElement('span'); s.className='pill'; s.textContent=f; feats.appendChild(s);
+      });
 
-      const photos = data.photos?.length ? data.photos : ["https://placehold.co/1200x800?text=Daycare"];
-      const g = el('gMain'); g.src = photos[0];
-      const th = el('thumbs'); th.innerHTML='';
-      photos.forEach((p,i)=>{ const im=new Image(); im.src=p; im.alt=data.name+' '+(i+1); th.appendChild(im); im.addEventListener('click',()=> g.src=p); });
+      // Gallery
+      const photos = data.photos && data.photos.length ? data.photos : ["https://placehold.co/1200x800?text=Daycare+Photo"];
+      el('gMain').src = photos[0];
+      const t = el('thumbs'); t.innerHTML='';
+      photos.forEach((p,i)=>{
+        const im = document.createElement('img'); im.src=p; im.alt=data.name + ' photo ' + (i+1);
+        im.addEventListener('click', ()=>{ el('gMain').src = p; });
+        t.appendChild(im);
+      });
 
+      // WhatsApp prefill
       const msg = encodeURIComponent(`Hi kidlore, I want help with ${data.name} (${slug}).`);
-      document.getElementById('waBtn').href = `https://wa.me/9643807790?text=${msg}`;
+      const wa1 = document.getElementById('waBtn');  if(wa1) wa1.href = `https://wa.me/9643807790?text=${msg}`;
+      const wa2 = document.getElementById('waBtn2'); if(wa2) wa2.href = `https://wa.me/9643807790?text=${msg}`;
     })();
   </script>
 </body>

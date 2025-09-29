@@ -1,158 +1,292 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kidlore — trusted daycare discovery (Gurgaon)</title>
-<meta name="description" content="Parent-verified daycare discovery in Gurgaon. Tell us your sector, get 3 verified options in 24 hours.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    color-scheme: light;
-    --bg:#F7F6F4; --ink:#101418; --muted:#6B7280;
-    --sage:#7FB78E; --sage-ink:#17694b;
-    --line:#E7E7EA; --card:#ffffff; --footer:#0d0f12;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-  a{color:var(--sage);text-decoration:none}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kidlore care — Trusted Daycare Discovery in Gurgaon</title>
+  <meta name="description" content="kidlore is a premium discovery platform for Gurgaon parents. Get 3 verified daycare options in 24 hours. Daycares: claim profile, get verified, and grow discovery across Google, Maps, Instagram & Ads.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F8F5F2;
+      --ink:#1f2937;
+      --muted:#6b7280;
+      --sage:#7FB78E;
+      --sage-ink:#17694b;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --footer:#0e0e0e;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    a{color:var(--sage);text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px 20px 72px}
 
-  /* NAV */
-  .nav{position:sticky;top:0;z-index:40;background:rgba(247,246,244,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(0,0,0,.06)}
-  .nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
-  .brand{display:flex;align-items:center;gap:10px}
-  .brand mark{background:transparent;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px}
-  .nav-links{display:flex;gap:18px;align-items:center}
-  .nav-links a{color:var(--ink);font-weight:600;font-size:14px;opacity:.95}
-  .nav-cta{
-    padding:10px 14px;
-    border-radius:10px;
-    background:#7FB78E !important;
-    color:#ffffff !important;
-    border:1px solid #6aa97d !important;
-    font-weight:800;
-    font-size:14px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    line-height:1;
-    text-rendering:optimizeLegibility;
-  }
+    .nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);background:rgba(248,245,242,.78);border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav-inner{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand mark{background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--ink);font-weight:600;font-size:14px;opacity:.95}
+    .nav-cta{padding:10px 14px;border-radius:10px;background:var(--sage);color:#fff;font-weight:700;font-size:14px}
+    .hamburger{display:none;width:24px;height:24px;cursor:pointer}
+    .hamburger span{display:block;height:2px;background:#111;margin:5px 0;border-radius:2px}
+    @media (max-width:860px){ .nav-links{display:none} .hamburger{display:block} }
+    .mobile-panel{display:none;position:fixed;inset:0;background:#ffffff;z-index:45;padding:20px}
+    .mobile-panel a{display:block;padding:14px 6px;border-bottom:1px solid var(--line);color:#111;font-weight:600}
+    .mobile-panel .close{position:absolute;top:14px;right:20px;font-size:14px;color:#555}
 
-  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+    .hero{padding:70px 0 20px;text-align:center}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:48px;margin:0 0 8px;color:#111}
+    .hero p{margin:0 0 12px;font-size:18px;color:var(--muted)}
+    .btn{display:inline-block;padding:14px 22px;border-radius:12px;background:var(--sage);color:#fff;font-weight:800;letter-spacing:.02em}
+    .btn.outline{background:transparent;color:var(--sage);border:1px solid var(--sage);font-weight:800}
 
-  /* HERO */
-  .hero{padding:56px 0 8px;text-align:center}
-  .hero h1{margin:0 0 8px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:48px;color:#0f1215;letter-spacing:.2px}
-  .hero p{margin:0 0 14px;color:var(--muted);font-size:18px}
-  .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--sage);color:#fff;font-weight:800}
-  .btn.outline{background:transparent;color:var(--sage);border:1px solid var(--sage)}
+    .request{margin:26px auto 6px;max-width:900px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .request h3{margin:0 0 6px;color:var(--sage-ink)}
+    .inline{font-size:12px;color:var(--muted)}
+    .req-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:8px}
+    .input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;background:#fff}
+    .req-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 
-  /* GRID / CARDS */
-  .section-title{margin:36px 0 10px;font-weight:800;color:var(--sage-ink)}
-  .list-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-  .l-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease}
-  .l-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.10)}
-  .l-img{height:170px;display:flex;align-items:center;justify-content:center;background:#F4F5F7}
-  /* Photo mode */
-  .l-img.photo img{width:100%;height:100%;object-fit:cover;display:block}
-  /* Logo mode - contained & centered */
-  .l-img.logo{background:#ffffff}
-  .l-img.logo img{max-width:70%;max-height:70%;width:auto;height:auto;object-fit:contain;display:block}
-  .l-body{padding:14px}
-  .l-title{margin:0 0 6px;display:flex;align-items:center;gap:8px;color:#111}
-  .meta{font-size:14px;margin:6px 0;color:#1f2730}
-  .feats{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-  .pill{border:1px solid var(--line);background:#FAFAFB;border-radius:999px;padding:4px 10px;font-size:12px}
-  .lock{margin-top:8px;font-size:12px;color:#7a7a7a;font-style:italic}
-  .scarcity{font-size:13px;color:#b33;margin:0 0 12px;font-weight:800}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:34px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+    .card h3{margin:0 0 6px;color:var(--sage-ink)}
 
-  /* Badges */
-  .badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px}
-  .verified{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
-  .pending{background:#fff3cd;color:#856404;border:1px solid #ffeeba}
-  .unclaimed{background:#f3f4f6;color:#374151;border:1px solid #e5e7eb}
+    .section-title{margin:48px 0 8px;font-weight:800;color:var(--sage-ink)}
+    .scarcity{font-size:13px;color:#b33;margin:0 0 16px;font-weight:800}
+    .list-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+    .l-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease}
+    .l-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.10)}
+    .l-img{height:170px;background:#f4f4f4}
+    .l-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .l-body{padding:14px}
+    .l-title{margin:0 0 6px;display:flex;align-items:center;gap:8px;color:#111}
+    .meta{font-size:14px;margin:6px 0}
+    .feats{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+    .pill{border:1px solid var(--line);background:#fafafa;border-radius:999px;padding:4px 10px;font-size:12px}
+    .lock{margin-top:8px;font-size:12px;color:#7a7a7a;font-style:italic}
 
-  /* Footer */
-  footer{background:var(--footer);color:#f5f5f5}
-  .foot{max-width:1100px;margin:0 auto;padding:28px 20px}
-  .legal{display:flex;gap:12px;flex-wrap:wrap;color:#9ca3af;font-size:13px;margin-top:14px}
-</style>
+    .badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px}
+    .verified{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+    .pending{background:#fff3cd;color:#856404;border:1px solid #ffeeba}
+    .unclaimed{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb}
+
+    .lede{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
+    .cols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .tile{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .price{font-weight:900;margin:6px 0 10px}
+
+    footer{background:var(--footer);color:#f5f5f5}
+    .foot{max-width:1080px;margin:0 auto;padding:26px 20px}
+    .foot-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:12px}
+    .foot h4{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:#eaeaea}
+    .foot a{color:#d1d5db;display:block;padding:6px 0;font-size:14px}
+    .foot a:hover{color:#fff}
+    .foot-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .country{display:flex;align-items:center;gap:8px;color:#e5e7eb;font-size:14px}
+    .country .dot{width:6px;height:6px;border-radius:999px;background:#34d399;display:inline-block}
+    .legal{display:flex;gap:12px;flex-wrap:wrap;color:#9ca3af;font-size:13px;margin-top:10px}
+    .social{display:flex;gap:12px}
+    .s-ico{width:22px;height:22px;display:inline-block}
+  </style>
 </head>
 <body>
-
-<!-- NAV -->
-<div class="nav">
-  <div class="nav-inner">
-    <div class="brand">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0a0a0a" stroke-width="1.6" fill="#7FB78E33"/></svg>
-      <mark>kidlore</mark>
-    </div>
-    <div class="nav-links">
-      <a href="#request">For Parents</a>
-      <a href="#featured">Daycares</a>
-      <a href="partners.html">For Daycares</a>
-      <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" style="background:#7FB78E;color:#fff;border:1px solid #6aa97d">Join Waitlist</a>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0a0a0a" stroke-width="1.6" fill="#7FB78E33"/></svg>
+        <mark>kidlore</mark>
+      </div>
+      <div class="nav-links">
+        <a href="#request">For Parents</a>
+        <a href="#featured">Daycares</a>
+        <a href="partners.html">For Daycares</a>
+        <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join Waitlist</a>
+      </div>
+      <div id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></div>
     </div>
   </div>
-</div>
 
-<main class="wrap">
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Trusted care, near you.</h1>
-    <p>Gurgaon’s parent-verified daycare discovery.</p>
-    <p style="margin-bottom:18px;color:#4b5563">Tell us your sector. Get 3 verified options in 24 hours.</p>
-    <a class="btn" href="#request">Get options</a>
-    &nbsp;<a class="btn outline" href="#b2b">I run a daycare</a>
-  </section>
+  <div id="mPanel" class="mobile-panel" aria-hidden="true">
+    <a href="#" class="close" id="mClose">Close ✕</a>
+    <a href="#request">For Parents</a>
+    <a href="#featured">Daycares</a>
+    <a href="partners.html">For Daycares</a>
+    <a href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join Waitlist</a>
+  </div>
 
-  <!-- Quick lead -->
-  <section id="request" style="margin:16px auto 8px;max-width:880px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,.06)">
-    <div style="display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
-      <input class="input" placeholder="Sector (e.g., 56/57/49)" style="padding:11px;border:1px solid var(--line);border-radius:10px">
-      <input class="input" placeholder="Child age (e.g., 2.5 years)" style="padding:11px;border:1px solid var(--line);border-radius:10px">
-      <input class="input" placeholder="Hours needed (e.g., 9am–6pm)" style="padding:11px;border:1px solid var(--line);border-radius:10px">
-      <input class="input" placeholder="Start month (e.g., Oct)" style="padding:11px;border:1px solid var(--line);border-radius:10px">
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-      <a id="rq" class="btn" href="#">Request options</a>
-      <a class="btn outline" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Open full form</a>
-    </div>
-    <p style="margin:6px 0 0;color:#6b7280;font-size:12px">Submitting opens the waitlist form.</p>
-  </section>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Trusted care, near you.</h1>
+      <p>Gurgaon’s parent-verified daycare discovery.</p>
+      <p style="margin-bottom:18px;color:#4b5563">Tell us your sector. Get 3 verified options in 24 hours.</p>
+      <a class="btn" href="#request">Get options</a>
+      &nbsp;<a class="btn outline" href="#b2b">I run a daycare</a>
+    </section>
 
-  <!-- Featured -->
-  <h2 id="featured" class="section-title">Featured daycares</h2>
-  <p class="scarcity">⚡ Only 10 trusted centres being onboarded in the Gurgaon pilot</p>
-  <section class="list-grid">
-    <!-- Sample verified & pending entries here (as per your last premium version)... -->
-    <!-- KEEP same card structure you already had for Little Scholars, Early Blossoms, KLAY, Footprints, FirstCry, SHEMROCK, Little Millennium -->
-  </section>
-</main>
-
-<footer>
-  <div class="foot">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div style="display:flex;align-items:center;gap:10px">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#fff" stroke-width="1.6" fill="#7FB78E"/></svg>
-        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px">kidlore</span>
+    <section id="request" class="request">
+      <h3>Get 3 verified options for your sector</h3>
+      <p class="inline">We check registration, CCTV & staff ratios. You’ll get options in 24 hours.</p>
+      <div class="req-grid">
+        <input id="rq-sector" class="input" placeholder="Your Sector (e.g., 56/57/49)" required>
+        <input id="rq-age" class="input" placeholder="Child age (e.g., 2.5 years)" required>
+        <input id="rq-hours" class="input" placeholder="Hours needed (e.g., 9am–6pm)" required>
+        <input id="rq-month" class="input" placeholder="Start month (e.g., Oct)" required>
       </div>
+      <div class="req-actions">
+        <a id="rq-submit" class="btn" href="#" role="button">Request options</a>
+        <a class="btn outline" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Open full form</a>
+      </div>
+      <p class="inline">Submitting opens the waitlist form in a new tab.</p>
+    </section>
+
+    <section class="grid" style="margin-top:26px">
+      <div class="card"><h3>How it works</h3><p>1) Tell us your area<br>2) We shortlist verified options<br>3) Talk to real parents</p></div>
+      <div class="card"><h3>What we verify</h3><p>Registration docs, CCTV, staff ratios, hygiene & reviews.</p></div>
+      <div class="card"><h3>Launching soon</h3><p>Be first to know as we open in more sectors.</p></div>
+    </section>
+
+    <h2 id="featured" class="section-title">Featured daycares</h2>
+    <p class="scarcity">⚡ Only 10 trusted centres being onboarded in the Gurgaon pilot</p>
+    <section class="list-grid">
+      <a class="l-card" href="daycare.html?slug=little-scholars" target="_blank" rel="noopener">
+        <div class="l-img"><img src="https://placehold.co/900x600?text=Little+Scholars" alt="Little Scholars"></div>
+        <div class="l-body">
+          <h4 class="l-title">Little Scholars <span class="badge verified">Verified</span></h4>
+          <div class="meta"><strong>Hours:</strong> 9:00 am – 7:30 pm (1st & 3rd Saturdays)</div>
+          <div class="meta"><strong>Ages:</strong> 9m+ (Daycare); 1.5–6y (Preschool)</div>
+          <div class="meta"><strong>Fees:</strong> ₹7,500 – ₹14,000</div>
+          <div class="feats"><span class="pill">CCTV</span><span class="pill">Meals</span><span class="pill">Transport</span><span class="pill">After-school</span></div>
+          <div class="lock">🔒 Contact, website & maps are shared after you request options on kidlore.</div>
+        </div>
+      </a>
+
+      <a class="l-card" href="daycare.html?slug=early-blossoms" target="_blank" rel="noopener">
+        <div class="l-img"><img src="https://placehold.co/900x600?text=Early+Blossoms" alt="Early Blossoms"></div>
+        <div class="l-body">
+          <h4 class="l-title">Early Blossoms <span class="badge verified">Verified</span></h4>
+          <div class="meta"><strong>Hours:</strong> 8:00 am – 7:30 pm</div>
+          <div class="meta"><strong>Ages:</strong> 6 months – 8 years</div>
+          <div class="meta"><strong>Fees:</strong> up to ₹20,000 (based on meals & hours)</div>
+          <div class="feats"><span class="pill">CCTV</span><span class="pill">Meals</span><span class="pill">Transport</span></div>
+          <div class="lock">🔒 Contact, website & maps are shared after you request options on kidlore.</div>
+        </div>
+      </a>
+    </section>
+
+    <h2 class="section-title">Popular in Gurgaon (unverified)</h2>
+    <section class="list-grid">
+      <a class="l-card" href="daycare.html?slug=klay" target="_blank"><div class="l-img"><img src="https://placehold.co/900x600?text=KLAY" alt="KLAY"></div><div class="l-body"><h4 class="l-title">KLAY <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">🔒 Full details after verification</div></div></a>
+      <a class="l-card" href="daycare.html?slug=footprints" target="_blank"><div class="l-img"><img src="https://placehold.co/900x600?text=Footprints" alt="Footprints"></div><div class="l-body"><h4 class="l-title">Footprints <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">🔒 Full details after verification</div></div></a>
+      <a class="l-card" href="daycare.html?slug=firstcry-intellitots" target="_blank"><div class="l-img"><img src="https://placehold.co/900x600?text=FirstCry+Intellitots" alt="FirstCry Intellitots"></div><div class="l-body"><h4 class="l-title">FirstCry Intellitots <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">🔒 Full details after verification</div></div></a>
+      <a class="l-card" href="daycare.html?slug=ipsaa" target="_blank"><div class="l-img"><img src="https://placehold.co/900x600?text=ipsaa" alt="ipsaa"></div><div class="l-body"><h4 class="l-title">ipsaa <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">🔒 Full details after verification</div></div></a>
+      <a class="l-card" href="daycare.html?slug=maple-bear" target="_blank"><div class="l-img"><img src="https://placehold.co/900x600?text=Maple+Bear" alt="Maple Bear"></div><div class="l-body"><h4 class="l-title">Maple Bear <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">🔒 Full details after verification</div></div></a>
+      <a class="l-card" href="daycare.html?slug=shemrock" target="_blank"><div class="l-img"><img src="https://placehold.co/900x600?text=Shemrock" alt="Shemrock"></div><div class="l-body"><h4 class="l-title">Shemrock <span class="badge unclaimed">Unclaimed</span></h4><div class="lock">🔒 Full details after verification</div></div></a>
+    </section>
+
+    <h2 id="b2b" class="section-title" style="margin-top:22px">For Daycares: grow with kidlore</h2>
+    <div class="lede">
+      <p style="margin:0">
+        We’re a <strong>discovery platform</strong> for parents. We don’t just list you on kidlore —
+        we <strong>grow your visibility across platforms</strong> (Google Search, Google Maps, Reviews, Instagram, Ads),
+        while giving you our <span class="badge verified">Verified</span> trust badge and routing parent leads.
+      </p>
+      <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="mailto:kidlore.care@gmail.com?subject=Join%20kidlore%20—%20Daycare&body=Centre%20name%3A%0ALocality%3A%0AWebsite%2FMaps%20link%3A%0AWhatsApp%3A" target="_blank">Claim your profile</a>
+        <a class="btn outline" href="daycare.html?slug=klay" target="_blank" rel="noopener">See sample profile</a>
+	    <a class="btn outline" href="partners.html">View growth packs</a>
+      </div>
+    </div>
+
+    <h3 class="section-title" style="margin-top:22px">Listing & verification (monthly)</h3>
+    <div class="cols">
+      <div class="tile"><strong>Unclaimed</strong><div class="price">₹0</div><div>Visible (limited). “Unclaimed” badge. No contact shown.</div></div>
+      <div class="tile"><strong>Verified Lite</strong><div class="price">₹999 / month</div><div>Verified badge, contact visible, “Top in Sector” carousel.</div></div>
+      <div class="tile"><strong>Verified Plus</strong><div class="price">₹2,999 / month</div><div>All Lite + WhatsApp lead routing, priority rank, monthly “Parent Insights”.</div></div>
+    </div>
+
+    <h3 class="section-title" style="margin-top:22px">Growth add-ons (discovery across platforms)</h3>
+    <p class="inline">Typical bundle value: <strong>₹15,000–₹20,000 per month</strong> (customizable by sector & goals).</p>
+    <div class="cols">
+      <div class="tile"><strong>Google Visibility Pack</strong><div>Maps setup/cleanup + NAP consistency • Local SEO keywords • Review engine (templates + cadence + reply SOP)</div></div>
+      <div class="tile"><strong>Instagram Presence</strong><div>Grid plan (8–12 posts/mo) + stories • UGC prompts • DM funnel to visits/enquiries</div></div>
+      <div class="tile"><strong>Performance Boost</strong><div>Meta Lead Ads (instant forms) • Google Search Ads • Weekly report + creative refresh</div></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <div class="foot-top">
+        <div class="brand" style="color:#fff">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#fff" stroke-width="1.6" fill="#7FB78E"/></svg>
+          <mark style="color:#fff;background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px">kidlore</mark>
+        </div>
+        <div class="social">
+          <a class="s-ico" href="https://www.linkedin.com/company/kidlore" target="_blank" aria-label="LinkedIn" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#d1d5db"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h4v1.9h.06c.56-1.06 1.93-2.17 3.97-2.17 4.25 0 5.04 2.8 5.04 6.44V21h-4v-5.3c0-1.26-.03-2.88-1.76-2.88-1.77 0-2.04 1.38-2.04 2.79V21H9z"/></svg>
+          </a>
+          <a class="s-ico" href="https://wa.me/9643807790" target="_blank" aria-label="WhatsApp" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="#d1d5db"><path d="M12.04 2C6.57 2 2.2 6.36 2.2 11.83c0 2.09.62 4.04 1.8 5.74L2 22l4.57-1.94a10.02 10.02 0 0 0 5.47 1.6c5.47 0 9.83-4.36 9.83-9.83C21.87 6.36 17.5 2 12.04 2zm0 17.7a7.8 7.8 0 0 1-3.98-1.09l-.29-.17-2.65 1.12.57-2.74-.18-.28A7.77 7.77 0 1 1 12.04 19.7zm4.53-5.86c-.25-.13-1.49-.73-1.72-.82-.23-.09-.4-.13-.57.13-.17.25-.65.82-.8.99-.15.17-.3.19-.55.06-.25-.13-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.36-1.71-.14-.25-.02-.39.11-.52.12-.12.25-.31.38-.46.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.38-.78-1.89-.2-.48-.41-.42-.57-.42l-.49-.01c-.17 0-.45.06-.68.32-.23.25-.9.88-.9 2.14s.93 2.48 1.06 2.65c.13.17 1.83 2.79 4.42 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.49-.61 1.69-1.2.2-.59.2-1.09.14-1.2-.05-.11-.22-.18-.47-.3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-grid">
+        <div>
+          <h4>Discover</h4>
+          <a href="#request">Find by Sector</a>
+          <a href="#featured">Featured Daycares</a>
+          <a href="partners.html">For Daycares</a>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <a href="mailto:kidlore.care@gmail.com">Contact Support</a>
+          <a href="#request">How It Works</a>
+          <a href="#request">Get 3 Options</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#b2b">About kidlore</a>
+          <a href="#">Careers (soon)</a>
+          <a href="#">Press (soon)</a>
+        </div>
+        <div>
+          <h4>Region</h4>
+          <div class="country"><span class="dot"></span> India</div>
+        </div>
+      </div>
+
       <div class="legal">
-        <span>© 2025 kidlore</span>
-        <a href="mailto:kidlore.care@gmail.com" style="color:#cfd3d8">Support</a>
-        <a href="#" style="color:#cfd3d8">Privacy</a>
+        <span>© 2025 kidlore. All rights reserved.</span>
+        <a href="#" style="color:#9ca3af">Terms of Use</a>
+        <a href="#" style="color:#9ca3af">Privacy Policy</a>
+        <a href="#" style="color:#9ca3af">Cookie Settings</a>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  document.getElementById('rq')?.addEventListener('click', e=>{
-    e.preventDefault(); window.open('https://forms.gle/9trgCQXMPNPVupe79','_blank');
-  });
-</script>
+  <script>
+    const ham = document.getElementById('hamburger');
+    const panel = document.getElementById('mPanel');
+    const closeBtn = document.getElementById('mClose');
+    const toggle = (open) => {
+      if(panel){ panel.style.display = open ? 'block' : 'none'; panel.setAttribute('aria-hidden', open?'false':'true'); }
+      if(ham){ ham.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+    };
+    ham?.addEventListener('click', ()=>toggle(true));
+    closeBtn?.addEventListener('click',(e)=>{e.preventDefault();toggle(false)});
+
+    (function(){
+      const btn = document.getElementById('rq-submit');
+      if(!btn) return;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        window.open('https://forms.gle/9trgCQXMPNPVupe79','_blank');
+      });
+    })();
+  </script>
 </body>
 </html>
