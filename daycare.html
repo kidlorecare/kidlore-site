@@ -5,21 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>kidlore — Daycare Profile</title>
   <meta name="description" content="Parent-verified daycare profiles for Gurgaon. See hours, ages, features and what we verify.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="kidlore — Daycare Profile">
+  <meta property="og:description" content="Trusted profiles with hours, ages, fees and kidlore’s verification checks.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://kidlore.care/og-image.jpg">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --bg:#F8F5F2; --ink:#1f2937; --muted:#6b7280;
-      --sage:#7FB78E; --sage-ink:#17694b;
-      --line:#e5e7eb; --card:#ffffff; --footer:#0e0e0e;
-    }
+    :root{ --bg:#F8F5F2; --ink:#1f2937; --muted:#6b7280; --sage:#7FB78E; --sage-ink:#17694b; --line:#e5e7eb; --card:#ffffff; --footer:#0e0e0e; }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
     a{color:var(--sage);text-decoration:none}
     .wrap{max-width:1080px;margin:0 auto;padding:24px 20px 72px}
 
-    /* Sticky nav */
+    /* Nav */
     .nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);background:rgba(248,245,242,.78);border-bottom:1px solid rgba(0,0,0,.06)}
     .nav-inner{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
@@ -52,7 +57,7 @@
     .grid{display:grid;gap:18px;grid-template-columns:2fr 3fr}
     @media (max-width:860px){ .grid{grid-template-columns:1fr} }
     .gallery{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}
-    .g-main{height:280px;border-radius:10px;overflow:hidden;background:#f5f5f5}
+    .g-main{height:280px;border-radius:10px;overflow:hidden;background:#f5f5f5;display:flex;align-items:center;justify-content:center}
     .g-main img{width:100%;height:100%;object-fit:cover;display:block}
     .thumbs{display:grid;gap:10px;grid-template-columns:repeat(4,1fr);margin-top:10px}
     .thumbs img{width:100%;height:70px;object-fit:cover;border:1px solid var(--line);border-radius:8px;cursor:pointer}
@@ -87,6 +92,14 @@
     .social{display:flex;gap:12px}
     .s-ico{width:22px;height:22px;display:inline-block}
   </style>
+
+  <!-- JSON-LD (WebPage) -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"kidlore — Daycare Profile","publisher":{"@type":"Organization","name":"kidlore"}}
+  </script>
+
+  <!-- Plausible -->
+  <script defer data-domain="kidlore.care" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
@@ -101,7 +114,7 @@
         <a href="index.html#request">For Parents</a>
         <a href="index.html#featured">Daycares</a>
         <a href="partners.html">For Daycares</a>
-        <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join Waitlist</a>
+        <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" onclick="plausible('Nav Join Waitlist')">Join Waitlist</a>
       </div>
       <div id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></div>
     </div>
@@ -127,9 +140,8 @@
       </div>
       <p id="dcLocality" class="sub">Gurgaon</p>
       <div class="cta-row">
-        <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Request contact</a>
-        <!-- WhatsApp to kidlore (replace with your E.164 number, e.g., 9198XXXXXXXX) -->
-        <a class="btn outline" id="waBtn" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20I%27m%20interested%20in%20this%20daycare." target="_blank" rel="noopener">WhatsApp kidlore</a>
+        <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" onclick="plausible('Profile Request Contact')">Request contact</a>
+        <a class="btn outline" id="waBtn" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20I%27m%20interested%20in%20this%20daycare." target="_blank" rel="noopener" onclick="plausible('Profile WhatsApp')">WhatsApp kidlore</a>
       </div>
     </section>
 
@@ -161,15 +173,15 @@
         <div class="lock-box">
           <div class="lock">🔒 Contact, website & maps are shared after you request options on kidlore.</div>
           <div class="cta-row" style="margin-top:8px">
-            <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Get 3 options</a>
-            <a class="btn outline" id="waBtn2" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20help%20me%20with%203%20verified%20options." target="_blank" rel="noopener">WhatsApp kidlore</a>
+            <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" onclick="plausible('Profile Get 3 Options')">Get 3 options</a>
+            <a class="btn outline" id="waBtn2" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20help%20me%20with%203%20verified%20options." target="_blank" rel="noopener" onclick="plausible('Profile WhatsApp 2')">WhatsApp kidlore</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer (same style as homepage) -->
+  <!-- Footer -->
   <footer>
     <div class="foot">
       <div class="foot-top">
@@ -181,7 +193,7 @@
           <a class="s-ico" href="https://www.linkedin.com/company/kidlore" target="_blank" aria-label="LinkedIn" rel="noopener">
             <svg viewBox="0 0 24 24" fill="#d1d5db"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h4v1.9h.06c.56-1.06 1.93-2.17 3.97-2.17 4.25 0 5.04 2.8 5.04 6.44V21h-4v-5.3c0-1.26-.03-2.88-1.76-2.88-1.77 0-2.04 1.38-2.04 2.79V21H9z"/></svg>
           </a>
-          <a class="s-ico" href="https://wa.me/919643807790" target="_blank" aria-label="WhatsApp" rel="noopener">
+          <a class="s-ico" href="https://wa.me/919643807790" target="_blank" aria-label="WhatsApp" rel="noopener" onclick="plausible('Footer WhatsApp')">
             <svg viewBox="0 0 24 24" fill="#d1d5db"><path d="M12.04 2C6.57 2 2.2 6.36 2.2 11.83c0 2.09.62 4.04 1.8 5.74L2 22l4.57-1.94a10.02 10.02 0 0 0 5.47 1.6c5.47 0 9.83-4.36 9.83-9.83C21.87 6.36 17.5 2 12.04 2zm0 17.7a7.8 7.8 0 0 1-3.98-1.09l-.29-.17-2.65 1.12.57-2.74-.18-.28A7.77 7.77 0 1 1 12.04 19.7zm4.53-5.86c-.25-.13-1.49-.73-1.72-.82-.23-.09-.4-.13-.57.13-.17.25-.65.82-.8.99-.15.17-.3.19-.55.06-.25-.13-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.36-1.71-.14-.25-.02-.39.11-.52.12-.12.25-.31.38-.46.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.38-.78-1.89-.2-.48-.41-.42-.57-.42l-.49-.01c-.17 0-.45.06-.68.32-.23.25-.9.88-.9 2.14s.93 2.48 1.06 2.65c.13.17 1.83 2.79 4.42 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.49-.61 1.69-1.2.2-.59.2-1.09.14-1.2-.05-.11-.22-.18-.47-.3z"/></svg>
           </a>
         </div>
@@ -233,7 +245,7 @@
     ham?.addEventListener('click', ()=>toggle(true));
     closeBtn?.addEventListener('click', (e)=>{e.preventDefault();toggle(false)});
 
-    // --- Simple data store ---
+    // --- Simple data store (extend as needed) ---
     const DB = {
       "early-blossoms": {
         name: "Early Blossoms",
@@ -267,6 +279,38 @@
           "https://placehold.co/1200x800?text=Little+Scholars+4"
         ]
       },
+      "shemrock-happy-faces": {
+        name: "SHEMROCK Happy Faces",
+        locality: "Sector 47, Gurgaon",
+        status: "pending",
+        lastChecked: "",
+        hours: "Preschool 8:00 am – 12:00 pm; Daycare 9:00 am – 6:00 pm",
+        ages: "—",
+        fees: "₹7,000 – ₹11,000",
+        features: ["CCTV","~1:10 ratio","Affordable & local"],
+        photos: [
+          "https://placehold.co/1200x800?text=SHEMROCK+Happy+Faces+1",
+          "https://placehold.co/1200x800?text=SHEMROCK+Happy+Faces+2",
+          "https://placehold.co/1200x800?text=SHEMROCK+Happy+Faces+3",
+          "https://placehold.co/1200x800?text=SHEMROCK+Happy+Faces+4"
+        ]
+      },
+      "little-millennium-sector-69": {
+        name: "Little Millennium — Sector 69",
+        locality: "Sector 69, Gurgaon (near Tulip Lemon)",
+        status: "pending",
+        lastChecked: "",
+        hours: "—",
+        ages: "—",
+        fees: "₹7,000 – ₹12,000",
+        features: ["CCTV","1:5–1:10 ratios","Seven-Petal curriculum","Weekend care (possible)"],
+        photos: [
+          "https://placehold.co/1200x800?text=Little+Millennium+Sec+69+1",
+          "https://placehold.co/1200x800?text=Little+Millennium+Sec+69+2",
+          "https://placehold.co/1200x800?text=Little+Millennium+Sec+69+3",
+          "https://placehold.co/1200x800?text=Little+Millennium+Sec+69+4"
+        ]
+      },
       "klay":           { name:"KLAY", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=KLAY"] },
       "footprints":     { name:"Footprints", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=Footprints"] },
       "firstcry-intellitots": { name:"FirstCry Intellitots", locality:"Gurgaon", status:"unclaimed", hours:"—", ages:"—", fees:"—", features:["—"], photos:["https://placehold.co/1200x800?text=FirstCry+Intellitots"] },
@@ -288,7 +332,6 @@
       // Title + badge
       el('dcName').textContent = data.name;
       el('dcLocality').textContent = data.locality || 'Gurgaon';
-
       const badge = el('dcBadge');
       badge.className = 'badge ' + (data.status || 'pending');
       badge.textContent = (data.status||'pending').replace(/^\w/, c=>c.toUpperCase());
@@ -321,7 +364,7 @@
         t.appendChild(im);
       });
 
-      // WhatsApp prefill
+      // WhatsApp prefill (E.164)
       const msg = encodeURIComponent(`Hi kidlore, I want help with ${data.name} (${slug}).`);
       const wa1 = document.getElementById('waBtn');  if(wa1) wa1.href = `https://wa.me/919643807790?text=${msg}`;
       const wa2 = document.getElementById('waBtn2'); if(wa2) wa2.href = `https://wa.me/919643807790?text=${msg}`;
