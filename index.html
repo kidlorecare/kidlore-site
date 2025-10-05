@@ -34,6 +34,7 @@
     .nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);background:rgba(248,245,242,.78);border-bottom:1px solid rgba(0,0,0,.06)}
     .nav-inner{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .home-link{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
     .brand mark{background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px}
     .nav-links{display:flex;gap:18px;align-items:center}
     .nav-links a{color:var(--ink);font-weight:600;font-size:14px;opacity:.95}
@@ -129,10 +130,10 @@
   <div class="nav">
     <div class="nav-inner">
       <div class="brand">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0a0a0a" stroke-width="1.6" fill="#7FB78E33"/></svg>
-        <mark>kidlore</mark>
-      </div>
+        <a href="index.html" class="home-link" aria-label="kidlore home"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0a0a0a" stroke-width="1.6" fill="#7FB78E33"/></svg>
+        <mark>kidlore</mark></a></div>
       <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="#request">For Parents</a>
         <a href="#featured">Daycares</a>
         <a href="partners.html">For Daycares</a>
@@ -145,6 +146,7 @@
   <!-- Mobile panel -->
   <div id="mPanel" class="mobile-panel" aria-hidden="true">
     <a href="#" class="close" id="mClose">Close ✕</a>
+    <a href="index.html">Home</a>
     <a href="#request">For Parents</a>
     <a href="#featured">Daycares</a>
     <a href="partners.html">For Daycares</a>
@@ -177,24 +179,6 @@
   </div>
   <p class="inline">Prefer chat? WhatsApp <strong>+91 9643807790</strong>.</p>
 </section>
-
-
-    <!-- Request form -->
-    <section id="request" class="request">
-      <h3>Get 3 verified options for your sector</h3>
-      <p class="inline">We check registration, CCTV & staff ratios. You’ll get options in 24 hours.</p>
-      <div class="req-grid">
-        <input id="rq-sector" class="input" placeholder="Your Sector (e.g., 56/57/49)" required>
-        <input id="rq-age" class="input" placeholder="Child age (e.g., 2.5 years)" required>
-        <input id="rq-hours" class="input" placeholder="Hours needed (e.g., 9am–6pm)" required>
-        <input id="rq-month" class="input" placeholder="Start month (e.g., Oct)" required>
-      </div>
-      <div class="req-actions">
-        <a id="rq-submit" class="btn" href="#" role="button">Request options</a>
-        <a class="btn outline" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" onclick="plausible('Open Full Form')">Open full form</a>
-      </div>
-      <p class="inline">Submitting opens the waitlist form in a new tab.</p>
-    </section>
 
     <!-- Explainers -->
     <section class="grid">
@@ -270,8 +254,8 @@
     <div class="foot">
       <div class="foot-top">
         <div class="brand" style="color:#fff">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#fff" stroke-width="1.6" fill="#7FB78E"/></svg>
-          <mark style="color:#fff;background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px">kidlore</mark>
+          <a href="index.html" class="home-link" aria-label="kidlore home"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#fff" stroke-width="1.6" fill="#7FB78E"/></svg>
+          <mark style="color:#fff;background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px">kidlore</mark></a>
         </div>
         <div class="social">
           <a class="s-ico" href="https://www.linkedin.com/company/kidlore" target="_blank" aria-label="LinkedIn" rel="noopener">
