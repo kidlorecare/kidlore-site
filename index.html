@@ -153,12 +153,31 @@
 
   <main class="wrap">
     <!-- Hero -->
-    <section class="hero">
-      <h1 id="heroH1">Parent-verified daycare options in 24 hours.</h1>
-      <p id="heroSub">Tell us your sector. We shortlist, verify the basics, and share 3 options.</p>
-      <a class="btn" href="#request" onclick="plausible('Hero Get Options Click')">Get options</a>
-      &nbsp;<a class="btn outline" href="#b2b">I run a daycare</a>
-    </section>
+    <!-- HERO -->
+<section class="hero">
+  <h1 id="heroH1">Get 3 parent-verified daycare options in 24 hours.</h1>
+  <p id="heroSub">Share your sector and hours. We shortlist verified options and WhatsApp you the details.</p>
+  <a class="btn" href="#request" onclick="plausible('Hero Get Options Click')">Get my 3 options</a>
+  &nbsp;<a class="btn outline" href="#b2b">I run a daycare</a>
+</section>
+
+<!-- REQUEST (tighten microcopy) -->
+<section id="request" class="request">
+  <h3>Tell us your sector & hours</h3>
+  <p class="inline">We check registration, CCTV & staff ratios, then send 3 options on WhatsApp within 24h.</p>
+  <div class="req-grid">
+    <input id="rq-sector" class="input" placeholder="Sector (e.g., 56/57/49)" required>
+    <input id="rq-age" class="input" placeholder="Child age (e.g., 2.5 years)" required>
+    <input id="rq-hours" class="input" placeholder="Hours needed (e.g., 9am–6pm)" required>
+    <input id="rq-month" class="input" placeholder="Start month (e.g., Oct)" required>
+  </div>
+  <div class="req-actions">
+    <a id="rq-submit" class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" onclick="plausible('Open Quick Form')">Submit & open form</a>
+    <a class="btn outline" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20please%20help%20me%20with%203%20verified%20options%20in%20Sector%20___.%20Child%20age%3A%20___.%20Hours%3A%20___." target="_blank" rel="noopener" onclick="plausible('Open WhatsApp Lead')">WhatsApp us instead</a>
+  </div>
+  <p class="inline">Prefer chat? WhatsApp <strong>+91 9643807790</strong>.</p>
+</section>
+
 
     <!-- Request form -->
     <section id="request" class="request">
