@@ -1,180 +1,107 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>kidlore — trusted daycare discovery in Gurgaon</title>
-<meta name="description" content="Tell us your sector; get 3 trusted daycare options in 24 hours." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#FAF9F7;--ink:#0F172A;--muted:#64748B;--accent:#2A8768;--line:#E5E7EB;--card:#fff;--footer:#0B0B0C}
-*{box-sizing:border-box} html,body{margin:0;padding:0}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-a{color:var(--accent);text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:24px 20px 80px}
-/* Nav */
-.nav{position:sticky;top:0;background:rgba(250,249,247,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(0,0,0,.06);z-index:50}
-.nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-weight:800;letter-spacing:.2px;font-size:18px;display:flex;align-items:center;gap:10px}
-.brand .word{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px}
-.nav-links{display:flex;gap:18px;align-items:center}
-.nav-links a{color:var(--ink);font-weight:600;font-size:14px;opacity:.96}
-.nav-cta{padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;font-size:14px}
-/* Hero */
-.hero{padding:72px 0 24px;text-align:center}
-.hero h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:50px;margin:0 0 8px;color:#0e0e0f;letter-spacing:.2px}
-.hero p{margin:0 0 10px;font-size:18px;color:var(--muted)}
-.btn{display:inline-block;padding:14px 22px;border-radius:12px;background:var(--accent);color:#fff;font-weight:800;letter-spacing:.02em}
-.btn.outline{background:transparent;color:var(--accent);border:1px solid var(--accent);font-weight:800}
-/* Request */
-.request{margin:26px auto 6px;max-width:900px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.06)}
-.request h3{margin:0 0 6px;color:#0e3b2f}
-.inline{font-size:12px;color:var(--muted)}
-.req-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:8px}
-.input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font-size:14px;background:#fff}
-.req-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-/* Cards */
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:34px}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
-.card h3{margin:0 0 6px;color:#0e3b2f}
-/* Listings */
-.section-title{margin:48px 0 8px;font-weight:900;color:#0e3b2f;letter-spacing:.2px}
-.list-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.l-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease}
-.l-card:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.10)}
-.l-img{height:170px;background:#f4f4f4}
-.l-img img{width:100%;height:100%;object-fit:cover;display:block}
-.l-body{padding:14px}
-.l-title{margin:0 0 6px;display:flex;align-items:center;gap:8px;color:#111}
-.meta{font-size:14px;margin:6px 0}
-.feats{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.pill{border:1px solid var(--line);background:#fafafa;border-radius:999px;padding:4px 10px;font-size:12px}
-.badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;background:#e8f5ef;color:#0e3b2f;border:1px solid #cbeadc}
-/* Footer */
-footer{background:var(--footer);color:#f5f5f5}
-.foot{max-width:1100px;margin:0 auto;padding:28px 20px}
-.foot-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:12px}
-.foot h4{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:#eaeaea}
-.foot a{color:#d1d5db;display:block;padding:6px 0;font-size:14px}
-.foot a:hover{color:#fff}
-.foot-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.legal{display:flex;gap:12px;flex-wrap:wrap;color:#9ca3af;font-size:13px;margin-top:10px}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>kidlore — trusted daycare discovery in Gurgaon</title>
+  <meta name="description" content="Tell us your sector; get 3 trusted daycare options in 24 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link href="kidlore.css" rel="stylesheet">
 </head>
 <body>
+  <!-- NAV -->
   <div class="nav">
     <div class="nav-inner">
-      <div class="brand"><span class="word">kidlore</span></div>
-      <div class="nav-links">
-        <a href="#request">For Parents</a>
-        <a href="#featured">Daycares</a>
-        <a href="partners.html">For Daycares</a>
-        <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join Waitlist</a>
-      </div>
+      <a class="brand home-link" href="index.html" aria-label="kidlore home">kidlore</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#parents">Parents</a>
+        <a href="#browse">Browse centres</a>
+        <a href="partners.html">For centres</a>
+      </nav>
+      <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join waitlist</a>
     </div>
   </div>
 
   <main class="wrap">
-    <section class="hero">
+    <!-- HERO -->
+    <section class="section hero">
       <h1>Trusted care, near you.</h1>
-      <p>Gurgaon’s premium daycare discovery.</p>
-      <p style="margin-bottom:18px;color:#4b5563">Tell us your sector. Get 3 trusted options in 24 hours.</p>
-      <a class="btn" href="#request">Get options</a>
-      &nbsp;<a class="btn outline" href="#b2b">I run a daycare</a>
+      <p class="sub">Gurgaon’s premium daycare discovery. Tell us your sector; get 3 trusted options in 24 hours.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <a class="btn" href="#parents">Get options</a>
+        <a class="btn ghost" href="partners.html">I run a centre</a>
+      </div>
     </section>
 
-    <section id="request" class="request">
-      <h3>Get 3 options for your sector</h3>
-      <p class="inline">We check essentials: registration, CCTV, staff ratios, hygiene. You’ll get options in 24 hours.</p>
-      <div class="req-grid">
+    <!-- FOR PARENTS -->
+    <h2 id="parents" class="section-title">For parents</h2>
+    <section class="request">
+      <p>We check essentials: registration, CCTV, staff ratios, hygiene — and WhatsApp your shortlist within 24 hours.</p>
+      <div class="req-grid" style="margin-top:10px">
         <input class="input" placeholder="Sector (e.g., 56/57/49)">
         <input class="input" placeholder="Child age (e.g., 2.5 years)">
         <input class="input" placeholder="Hours needed (e.g., 9am–6pm)">
         <input class="input" placeholder="Start month (e.g., Oct)">
       </div>
-      <div class="req-actions">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
         <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Request options</a>
-        <a class="btn outline" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Open full form</a>
+        <a class="btn ghost" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20please%20help%20me%20with%203%20trusted%20options%20in%20Sector%20___.%20Child%20age%3A%20___.%20Hours%3A%20___." target="_blank" rel="noopener">WhatsApp instead</a>
       </div>
-      <p class="inline">Submitting opens the waitlist form in a new tab.</p>
     </section>
 
-    <section class="grid" style="margin-top:26px">
-      <div class="card"><h3>How it works</h3><p>1) Tell us your area<br>2) We shortlist trusted options<br>3) Talk to real parents</p></div>
-      <div class="card"><h3>What we check</h3><p>Registration docs, CCTV, staff ratios, hygiene & reviews.</p></div>
-      <div class="card"><h3>Launching soon</h3><p>Be first to know as we open in more sectors.</p></div>
+    <!-- VALUE CARDS -->
+    <section class="grid grid-3" style="margin-top:26px">
+      <div class="card"><h3>Shortlists that save time</h3><p>Three clear options matched to your hours and sector.</p></div>
+      <div class="card"><h3>Essentials checked</h3><p>Registration, CCTV, ratios, hygiene and policy clarity.</p></div>
+      <div class="card"><h3>Calm & private</h3><p>No spam. You choose if/when to contact the centre.</p></div>
     </section>
 
-    <h2 id="featured" class="section-title">Featured daycares</h2>
+    <!-- BROWSE -->
+    <h2 id="browse" class="section-title">Browse centres</h2>
     <section class="list-grid">
       <a class="l-card" href="daycare.html?slug=little-scholars" target="_blank" rel="noopener">
-        <div class="l-img"><img src="https://placehold.co/900x600?text=Little+Scholars" alt="Little Scholars"></div>
+        <div class="l-img"><img src="https://placehold.co/1200x720/edf2f7/111?text=Little+Scholars" alt="Little Scholars"></div>
         <div class="l-body">
-          <h4 class="l-title">Little Scholars <span class="badge">Trusted</span></h4>
-          <div class="meta"><strong>Hours:</strong> 9:00 am – 7:30 pm (1st & 3rd Saturdays)</div>
-          <div class="meta"><strong>Ages:</strong> 9m+ (Daycare); 1.5–6y (Preschool)</div>
-          <div class="meta"><strong>Fees:</strong> ₹7,500 – ₹14,000</div>
-          <div class="feats"><span class="pill">CCTV</span><span class="pill">Meals</span><span class="pill">Transport</span><span class="pill">After-school</span></div>
-          <div class="meta" style="font-size:12px;color:#7a7a7a;font-style:italic">Contact & maps are shared after you request options.</div>
+          <strong>Little Scholars</strong>
+          <div class="pill">CCTV</div><div class="pill">Meals</div><div class="pill">Transport</div>
         </div>
       </a>
-
       <a class="l-card" href="daycare.html?slug=early-blossoms" target="_blank" rel="noopener">
-        <div class="l-img"><img src="https://placehold.co/900x600?text=Early+Blossoms" alt="Early Blossoms"></div>
+        <div class="l-img"><img src="https://placehold.co/1200x720/edf2f7/111?text=Early+Blossoms" alt="Early Blossoms"></div>
         <div class="l-body">
-          <h4 class="l-title">Early Blossoms <span class="badge">Trusted</span></h4>
-          <div class="meta"><strong>Hours:</strong> 8:00 am – 7:30 pm</div>
-          <div class="meta"><strong>Ages:</strong> 6 months – 8 years</div>
-          <div class="meta"><strong>Fees:</strong> up to ₹20,000 (based on meals & hours)</div>
-          <div class="feats"><span class="pill">CCTV</span><span class="pill">Meals</span><span class="pill">Transport</span></div>
-          <div class="meta" style="font-size:12px;color:#7a7a7a;font-style:italic">Contact & maps are shared after you request options.</div>
+          <strong>Early Blossoms</strong>
+          <div class="pill">CCTV</div><div class="pill">Meals</div><div class="pill">Transport</div>
         </div>
       </a>
     </section>
-
-    <h2 id="b2b" class="section-title">For Daycares: grow with kidlore</h2>
-    <div class="card" style="text-align:left">
-      <p style="margin:0 0 8px">We’re a discovery platform for parents. Beyond your kidlore profile, we grow your visibility across <strong>Google</strong>, <strong>Maps</strong>, <strong>Reviews</strong>, <strong>Instagram</strong> and <strong>Ads</strong>.</p>
-      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="mailto:kidlore.care@gmail.com?subject=Join%20kidlore%20—%20Daycare&body=Centre%20name%3A%0ALocality%3A%0AWhatsApp%3A" target="_blank">Claim your profile</a>
-        <a class="btn outline" href="partners.html">View growth packs</a>
-      </div>
-    </div>
   </main>
 
   <footer>
     <div class="foot">
-      <div class="foot-top">
-        <div class="brand"><span class="word" style="color:#fff">kidlore</span></div>
-        <div></div>
-      </div>
+      <div style="font-weight:900;font-size:20px;letter-spacing:-.02em">kidlore</div>
       <div class="foot-grid">
         <div>
           <h4>Discover</h4>
-          <a href="#request">Find by Sector</a>
-          <a href="#featured">Featured Daycares</a>
-          <a href="partners.html">For Daycares</a>
+          <a href="#parents">For parents</a>
+          <a href="#browse">Browse centres</a>
         </div>
         <div>
-          <h4>Help</h4>
-          <a href="mailto:hello@kidlore.care">Contact Support</a>
-          <a href="#request">How It Works</a>
+          <h4>For centres</h4>
+          <a href="partners.html">Growth packs</a>
+          <a href="mailto:kidlore.care@gmail.com">Claim profile</a>
         </div>
         <div>
           <h4>Company</h4>
-          <a href="partners.html">About kidlore</a>
+          <a href="#">About (soon)</a>
           <a href="#">Press (soon)</a>
-        </div>
-        <div>
-          <h4>Region</h4>
-          <div>India</div>
         </div>
       </div>
       <div class="legal">
         <span>© 2025 kidlore. All rights reserved.</span>
-        <a href="#" style="color:#9ca3af">Terms</a>
-        <a href="#" style="color:#9ca3af">Privacy</a>
+        <a href="#" style="color:#9ca3af;text-decoration:none">Terms</a>
+        <a href="#" style="color:#9ca3af;text-decoration:none">Privacy</a>
       </div>
     </div>
   </footer>
