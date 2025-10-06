@@ -1,301 +1,58 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kidlore — Partner with us (Daycare growth & verification)</title>
-  <meta name="description" content="Claim your profile, earn the Verified badge, and grow discovery across Google, Maps, Instagram & Ads. Leads routed to WhatsApp/email. Gurgaon pilot.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="kidlore — Partner with us (Daycare growth & verification)">
-  <meta property="og:description" content="Claim your profile, earn the Verified badge, and grow discovery across Google, Maps, Instagram & Ads.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kidlore.care/partners.html">
-  <meta property="og:image" content="https://kidlore.care/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Fonts -->
+  <title>kidlore — For daycares</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#FAFAF9; --ink:#0b0f19; --muted:#667085;
-      --sage:#7FB78E; --sage-ink:#17694b;
-      --blush:#F3E6EA; --line:#EAEAEA; --card:#ffffff; --footer:#0e0e0e;
-    }
-    *{box-sizing:border-box}
-    html,body{font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-    a{color:var(--sage);text-decoration:none}
-    .wrap{max-width:1140px;margin:0 auto;padding:28px 22px 84px}
-
-    /* Nav */
-    .nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);background:rgba(250,250,249,.78);border-bottom:1px solid rgba(0,0,0,.06)}
-    .nav-inner{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand .home-link{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
-    .brand mark{background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{color:var(--ink);font-weight:600;font-size:14px;opacity:.95}
-    .nav-cta{padding:10px 14px;border-radius:10px;background:var(--sage);color:#fff;font-weight:700;font-size:14px}
-    .hamburger{display:none;width:24px;height:24px;cursor:pointer}
-    .hamburger span{display:block;height:2px;background:#111;margin:5px 0;border-radius:2px}
-    @media (max-width:860px){ .nav-links{display:none} .hamburger{display:block} }
-    .mobile-panel{display:none;position:fixed;inset:0;background:#ffffff;z-index:45;padding:20px}
-    .mobile-panel a{display:block;padding:14px 6px;border-bottom:1px solid var(--line);color:#111;font-weight:600}
-    .mobile-panel .close{position:absolute;top:14px;right:20px;font-size:14px;color:#555}
-
-    /* Hero */
-    .hero{padding:64px 0 14px;text-align:center}
-    .hero h1{font-family:inherit;font-weight:800;font-size:clamp(28px,4.2vw,56px);margin:0 0 10px;color:#0b0f19;letter-spacing:-.02em}
-    .hero p{margin:0 0 14px;font-size:clamp(14px,1.4vw,18px);color:var(--muted)}
-    .btn{display:inline-block;padding:14px 22px;border-radius:14px;background:var(--ink);color:#fff;font-weight:800;letter-spacing:.01em;box-shadow:0 8px 18px rgba(0,0,0,.06);transition:transform .15s ease, box-shadow .15s ease}
-    .btn.outline{background:transparent;color:var(--ink);border:1px solid #1a1f2e14;font-weight:800}
-
-    .lede{max-width:860px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-    .lede p{margin:0}
-    .cta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px}
-
-    /* Sections */
-    .section-title{margin:38px 0 8px;font-weight:800;color:var(--sage-ink);text-align:center}
-    .cols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .tile{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
-    .price{font-weight:900;margin:6px 0 10px}
-    .muted{color:var(--muted);font-size:13px}
-
-    /* Proof */
-    .proof{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
-    .stat{font-size:28px;font-weight:900;color:#111}
-    .cap{font-size:13px;color:#6b7280}
-
-    /* Footer */
-    footer{background:var(--footer);color:#f5f5f5;margin-top:36px}
-    .foot{max-width:1080px;margin:0 auto;padding:26px 20px}
-    .foot-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid rgba(255,255,255,.08);padding-top:16px;margin-top:12px}
-    .foot h4{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:#eaeaea}
-    .foot a{color:#d1d5db;display:block;padding:6px 0;font-size:14px}
-    .foot a:hover{color:#fff}
-    .foot-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .country{display:flex;align-items:center;gap:8px;color:#e5e7eb;font-size:14px}
-    .country .dot{width:6px;height:6px;border-radius:999px;background:#34d399;display:inline-block}
-    .legal{display:flex;gap:12px;flex-wrap:wrap;color:#9ca3af;font-size:13px;margin-top:10px}
-    .social{display:flex;gap:12px}
-    .s-ico{width:22px;height:22px;display:inline-block}
-  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(0,0,0,.1)}
-  </style>
-
-  <!-- JSON-LD: Organization + Services -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "name":"kidlore",
-        "url":"https://kidlore.care/",
-        "email":"kidlore.care@gmail.com",
-        "telephone":"+919643807790",
-        "sameAs":["https://www.linkedin.com/company/kidlore","https://wa.me/919643807790"]
-      },
-      {
-        "@type":"Service",
-        "name":"Verified Lite",
-        "provider":{"@type":"Organization","name":"kidlore"},
-        "areaServed":"Gurgaon",
-        "offers":{"@type":"Offer","priceCurrency":"INR","price":"999","priceSpecification":{"@type":"UnitPriceSpecification","unitText":"per month"}}
-      },
-      {
-        "@type":"Service",
-        "name":"Verified Plus",
-        "provider":{"@type":"Organization","name":"kidlore"},
-        "areaServed":"Gurgaon",
-        "offers":{"@type":"Offer","priceCurrency":"INR","price":"2999","priceSpecification":{"@type":"UnitPriceSpecification","unitText":"per month"}}
-      }
-    ]
-  }
-  </script>
-
-  <!-- Plausible analytics -->
-  <script defer data-domain="kidlore.care" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="kidlore-premium-v3.css" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Nav -->
   <div class="nav">
     <div class="nav-inner">
       <div class="brand">
-        <a href="index.html" class="home-link" aria-label="kidlore home"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#0a0a0a" stroke-width="1.6" fill="#7FB78E33"/></svg>
-        <mark>kidlore</mark></a></div>
+        <a href="index.html" class="home-link" aria-label="kidlore home"><mark>kidlore</mark></a>
+      </div>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#request">For Parents</a>
-        <a href="index.html#featured">Daycares</a>
-        <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener" onclick="plausible('Nav Join Waitlist')">Join Waitlist</a>
+        <a href="index.html#featured">Featured</a>
+        <a href="#packs">Growth packs</a>
+        <a class="nav-cta" href="mailto:kidlore.care@gmail.com?subject=Claim%20my%20kidlore%20profile">Claim profile</a>
       </div>
       <div id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></div>
     </div>
   </div>
 
-  <!-- Mobile panel -->
-  <div id="mPanel" class="mobile-panel" aria-hidden="true">
-    <a href="#" class="close" id="mClose">Close ✕</a>
-    <a href="index.html">Home</a>
-    <a href="index.html#request">For Parents</a>
-    <a href="index.html#featured">Daycares</a>
-    <a href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join Waitlist</a>
-  </div>
-
   <main class="wrap">
-    <!-- Hero -->
     <section class="hero">
-      <h1>Partner with kidlore</h1>
-      <p>Grow discovery across Google, Maps, Instagram & Ads. Earn the <span style="font-weight:700;color:var(--sage-ink)">Verified</span> badge. Route parent leads to WhatsApp/email.</p>
-      <div class="cta-row">
-        <a class="btn" href="mailto:kidlore.care@gmail.com?subject=Claim%20my%20kidlore%20profile&body=Centre%20name%3A%0ALocality%3A%0AWebsite%2FMaps%3A%0AWhatsApp%3A" target="_blank" onclick="plausible('Partners Claim Profile')">Claim your profile</a>
-        <a class="btn outline" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20I%27d%20like%20to%20learn%20about%20Verified%20plans." target="_blank" rel="noopener" onclick="plausible('Partners WhatsApp')">WhatsApp kidlore</a>
+      <h1>Discovery that respects your brand</h1>
+      <p>kidlore verified profiles, clean photos, clear contact flows, and parent-friendly detail. Calm, premium, fast.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:12px">
+        <a class="btn sage" href="mailto:kidlore.care@gmail.com?subject=Claim%20my%20kidlore%20profile">Claim your profile</a>
+        <a class="btn ghost" href="index.html#featured">See featured daycares</a>
       </div>
     </section>
 
-    <!-- Value lede -->
-    <div class="lede">
-  <p><strong>Shortlisting 10 trusted centres in Gurgaon.</strong> Get the <span class="badge verified">Verified</span> badge, show your contact on kidlore, and route parent leads straight to your WhatsApp.</p>
-  <div class="cta-row">
-    <a class="btn" href="mailto:kidlore.care@gmail.com?subject=Claim%20my%20kidlore%20profile&body=Centre%20name%3A%0ALocality%3A%0AWhatsApp%3A%0AWebsite%2FMaps%3A" target="_blank" onclick="plausible('Partners Claim Profile')">Claim your profile</a>
-    <a class="btn outline" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20we%20want%20to%20earn%20the%20Verified%20badge%20and%20route%20leads%20to%20WhatsApp." target="_blank" rel="noopener" onclick="plausible('Partners WhatsApp')">Chat on WhatsApp</a>
-  </div>
-  <p class="inline" style="margin-top:8px">Plans start at ₹999/month. Low entry, cancel anytime.</p>
-</div>
-
-
-    <!-- Plans -->
-    <h2 class="section-title">Listing & verification (monthly)</h2>
-    <section class="cols">
-      <div class="tile">
-        <strong>Unclaimed</strong>
-        <div class="price">₹0</div>
-        <div>Visible (limited). “Unclaimed” badge. No contact shown.</div>
-      </div>
-      <div class="tile">
-        <strong>Verified Lite</strong>
-        <div class="price">₹999 / month</div>
-        <ul class="muted" style="padding-left:18px;line-height:1.7">
-          <li>Verified badge on profile</li>
-          <li>Contact visible (phone/WhatsApp/email)</li>
-          <li>“Top in Sector” carousel eligibility</li>
-        </ul>
-      </div>
-      <div class="tile">
-        <strong>Verified Plus</strong>
-        <div class="price">₹2,999 / month</div>
-        <ul class="muted" style="padding-left:18px;line-height:1.7">
-          <li>Everything in Lite</li>
-          <li>WhatsApp lead routing + priority rank</li>
-          <li>Monthly “Parent Insights” snapshot</li>
-        </ul>
-      </div>
+    <section id="packs" class="grid-auto">
+      <div class="card"><h3>Listing</h3><p>Live on kidlore with a clean profile and contact visibility.</p><strong>₹999 / month</strong></div>
+      <div class="card"><h3>Listing + Leads</h3><p>WhatsApp routing, priority rank, monthly “Parent Insights”.</p><strong>₹2,999 / month</strong></div>
+      <div class="card"><h3>Polish Sprint</h3><p>One-off Google/Photos/Copy cleanup in 72 hours.</p><strong>₹6,000 one-time</strong></div>
     </section>
-
-    <!-- Growth add-ons -->
-    <h2 class="section-title">Growth add-ons (discovery across platforms)</h2>
-    <p class="muted" style="text-align:center;margin-top:-4px">Typical bundle value: <strong>₹15,000–₹20,000 / month</strong> (customizable by sector & goals).</p>
-    <section class="cols" style="margin-top:10px">
-      <div class="tile">
-        <strong>Google Visibility Pack</strong>
-        <div>Maps setup/cleanup • NAP consistency • Local keywords • Review engine (templates + cadence + reply SOP)</div>
-      </div>
-      <div class="tile">
-        <strong>Instagram Presence</strong>
-        <div>Grid plan (8–12 posts/mo) + stories • UGC prompts • DM funnel to visits/enquiries</div>
-      </div>
-      <div class="tile">
-        <strong>Performance Boost</strong>
-        <div>Meta Lead Ads (instant forms) • Google Search Ads • Weekly report + creative refresh</div>
-      </div>
-    </section>
-
-    <!-- Proof / snapshots (edit later with real numbers) -->
-    <h2 class="section-title">Why centres join</h2>
-    <section class="proof">
-      <div class="card"><div class="stat">#1</div><div class="cap">Parents start on Google. We lift your Maps visibility & reviews.</div></div>
-      <div class="card"><div class="stat">24h</div><div class="cap">Turnaround for parent shortlists keeps enquiries moving.</div></div>
-      <div class="card"><div class="stat">WhatsApp</div><div class="cap">Leads routed where your team already responds fastest.</div></div>
-    </section>
-
-    <!-- CTA -->
-    <div class="lede" style="margin-top:18px;text-align:center">
-      <p><strong>Next step:</strong> claim your profile and share your basic details (hours, age bands, fees, CCTV, ratios). We’ll verify and go live.</p>
-      <div class="cta-row">
-        <a class="btn" href="mailto:kidlore.care@gmail.com?subject=Claim%20my%20kidlore%20profile&body=Centre%20name%3A%0ALocality%3A%0AWebsite%2FMaps%3A%0AWhatsApp%3A" target="_blank" onclick="plausible('Partners Claim Profile 2')">Claim your profile</a>
-        <a class="btn outline" href="index.html#featured">See sample listings</a>
-      </div>
-    </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="foot">
       <div class="foot-top">
         <div class="brand" style="color:#fff">
-          <a href="index.html" class="home-link" aria-label="kidlore home"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19c8 0 14-6 14-14-6 0-14 6-14 14Z" stroke="#fff" stroke-width="1.6" fill="#7FB78E"/></svg>
-          <mark style="color:#fff;background:transparent;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px">kidlore</mark></a>
-        </div>
-        <div class="social">
-          <a class="s-ico" href="https://www.linkedin.com/company/kidlore" target="_blank" aria-label="LinkedIn" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="#d1d5db"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h4v1.9h.06c.56-1.06 1.93-2.17 3.97-2.17 4.25 0 5.04 2.8 5.04 6.44V21h-4v-5.3c0-1.26-.03-2.88-1.76-2.88-1.77 0-2.04 1.38-2.04 2.79V21H9z"/></svg>
-          </a>
-          <a class="s-ico" href="https://wa.me/919643807790" target="_blank" aria-label="WhatsApp" rel="noopener" onclick="plausible('Footer WhatsApp')">
-            <svg viewBox="0 0 24 24" fill="#d1d5db"><path d="M12.04 2C6.57 2 2.2 6.36 2.2 11.83c0 2.09.62 4.04 1.8 5.74L2 22l4.57-1.94a10.02 10.02 0 0 0 5.47 1.6c5.47 0 9.83-4.36 9.83-9.83C21.87 6.36 17.5 2 12.04 2zm0 17.7a7.8 7.8 0 0 1-3.98-1.09l-.29-.17-2.65 1.12.57-2.74-.18-.28A7.77 7.77 0 1 1 12.04 19.7zm4.53-5.86c-.25-.13-1.49-.73-1.72-.82-.23-.09-.4-.13-.57.13-.17.25-.65.82-.8.99-.15.17-.3.19-.55.06-.25-.13-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.36-1.71-.14-.25-.02-.39.11-.52.12-.12.25-.31.38-.46.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.38-.78-1.89-.2-.48-.41-.42-.57-.42l-.49-.01c-.17 0-.45.06-.68.32-.23.25-.9.88-.9 2.14s.93 2.48 1.06 2.65c.13.17 1.83 2.79 4.42 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.49-.61 1.69-1.2.2-.59.2-1.09.14-1.2-.05-.11-.22-.18-.47-.3z"/></svg>
-          </a>
+          <a href="index.html" class="home-link" aria-label="kidlore home"><mark style="color:#fff;background:transparent">kidlore</mark></a>
         </div>
       </div>
-
-      <div class="foot-grid">
-        <div>
-          <h4>Discover</h4>
-          <a href="index.html#request">Find by Sector</a>
-          <a href="index.html#featured">Featured Daycares</a>
-          <a href="partners.html">For Daycares</a>
-        </div>
-        <div>
-          <h4>Help</h4>
-          <a href="mailto:kidlore.care@gmail.com">Contact Support</a>
-          <a href="index.html#request">How It Works</a>
-          <a href="index.html#request">Get 3 Options</a>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <a href="partners.html">About kidlore</a>
-          <a href="#">Careers (soon)</a>
-          <a href="#">Press (soon)</a>
-        </div>
-        <div>
-          <h4>Region</h4>
-          <div class="country"><span class="dot"></span> India</div>
-        </div>
-      </div>
-
       <div class="legal">
         <span>© 2025 kidlore. All rights reserved.</span>
-        <a href="#" style="color:#9ca3af">Terms of Use</a>
-        <a href="#" style="color:#9ca3af">Privacy Policy</a>
-        <a href="#" style="color:#9ca3af">Cookie Settings</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    // Mobile nav
-    const ham = document.getElementById('hamburger');
-    const panel = document.getElementById('mPanel');
-    const closeBtn = document.getElementById('mClose');
-    function toggle(open){
-      if(panel){ panel.style.display = open ? 'block':'none'; panel.setAttribute('aria-hidden', open?'false':'true'); }
-      if(ham){ ham.setAttribute('aria-expanded', open?'true':'false'); }
-    }
-    ham?.addEventListener('click', ()=>toggle(true));
-    closeBtn?.addEventListener('click', (e)=>{e.preventDefault();toggle(false)});
-  </script>
 </body>
 </html>
