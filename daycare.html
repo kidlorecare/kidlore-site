@@ -1,66 +1,144 @@
-
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kidlore — Daycare profile</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link href="kidlore-premium-v3.css" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>kidlore — Daycare Profile</title>
+<meta name="description" content="Trusted daycare profiles for Gurgaon. See hours, ages, features and photos." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF9F7;--ink:#0F172A;--muted:#64748B;--accent:#2A8768;--line:#E5E7EB;--card:#ffffff;--footer:#0B0B0C}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 20px 80px}
+.nav{position:sticky;top:0;background:rgba(250,249,247,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(0,0,0,.06);z-index:50}
+.nav-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;letter-spacing:.2px;font-size:18px;display:flex;align-items:center;gap:10px}
+.brand .word{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px}
+.hero{padding:54px 0 12px}
+.title{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 6px}
+.title h1{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:40px;color:#111}
+.badge{display:inline-block;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px;background:#e8f5ef;color:#0e3b2f;border:1px solid #cbeadc}
+.sub{color:var(--muted);margin:0 0 12px}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;background:var(--accent);color:#fff;font-weight:800}
+.btn.outline{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.grid{display:grid;gap:18px;grid-template-columns:2fr 3fr}
+@media (max-width:860px){ .grid{grid-template-columns:1fr} }
+.gallery{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}
+.g-main{height:280px;border-radius:10px;overflow:hidden;background:#f5f5f5}
+.g-main img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs{display:grid;gap:10px;grid-template-columns:repeat(4,1fr);margin-top:10px}
+.thumbs img{width:100%;height:70px;object-fit:cover;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.info{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.k-meta{margin:6px 0;font-size:15px}
+.feats{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.pill{border:1px solid var(--line);background:#fafafa;border-radius:999px;padding:4px 10px;font-size:12px}
+.lock{margin-top:10px;font-size:13px;color:#7a7a7a;font-style:italic}
+footer{background:var(--footer);color:#f5f5f5;margin-top:36px}
+.foot{max-width:1100px;margin:0 auto;padding:28px 20px}
+.legal{display:flex;gap:12px;flex-wrap:wrap;color:#9ca3af;font-size:13px;margin-top:10px}
+</style>
 </head>
 <body>
   <div class="nav">
     <div class="nav-inner">
-      <div class="brand"><a href="index.html" class="home-link" aria-label="kidlore home"><mark>kidlore</mark></a></div>
-      <div class="nav-links">
-        <a href="index.html#featured">Back to results</a>
-      </div>
-      <div id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></div>
+      <div class="brand"><span class="word">kidlore</span></div>
+      <div class="nav-links"></div>
     </div>
   </div>
 
   <main class="wrap">
-    <section class="grid grid-2">
-      <div>
-        <h1 id="dc-name">Centre name</h1>
-        <p class="scarcity" style="margin:6px 0 16px"><span class="badge verified">kidlore verified</span></p>
-        <p id="dc-about">Short, clean description that parents can read in one breath.</p>
-        <div class="feats" style="margin:10px 0"><span class="pill">CCTV</span><span class="pill">Meals</span><span class="pill">Transport</span></div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-          <a class="btn sage" href="https://wa.me/919643807790?text=Hi%20kidlore%2C%20I%20want%20a%20visit%20slot%20for%20___%20in%20Sector%20___">Request a visit</a>
-          <a class="btn ghost" href="mailto:kidlore.care@gmail.com?subject=Enquiry%20about%20__">Email</a>
-        </div>
+    <p><a href="kidlore_index_premium.html">← Back to listings</a></p>
+    <section class="hero">
+      <div class="title">
+        <h1 id="dcName">Daycare</h1>
+        <span id="dcBadge" class="badge">Trusted</span>
       </div>
-      <div class="media" aria-hidden="true" style="border:1px solid #e9e9ef;border-radius:18px;aspect-ratio:4/3"></div>
+      <p id="dcLocality" class="sub">Gurgaon</p>
+      <div class="cta-row">
+        <a class="btn" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Request contact</a>
+        <a class="btn outline" id="waBtn" href="https://wa.me/9643807790" target="_blank" rel="noopener">WhatsApp kidlore</a>
+      </div>
     </section>
 
-    <section class="grid-auto">
-      <div class="card"><h3>Hours</h3><p id="dc-hours">9:00 am – 7:30 pm</p></div>
-      <div class="card"><h3>Ages</h3><p id="dc-ages">9 months – 8 years</p></div>
-      <div class="card"><h3>Fees</h3><p id="dc-fees">₹7,500 – ₹14,000 (varies by hours/meals)</p></div>
-      <div class="card"><h3>Location</h3><p id="dc-loc">Sector 43, Gurgaon</p></div>
-    </section>
-
-    <section class="cta">
-      <div class="row">
-        <h2 style="margin:0">Want your centre on kidlore?</h2>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn sage" href="partners.html">View growth packs</a>
-          <a class="btn ghost" href="mailto:kidlore.care@gmail.com?subject=Claim%20my%20kidlore%20profile">Claim profile</a>
-        </div>
+    <section class="grid" style="margin-top:16px">
+      <div class="gallery">
+        <div class="g-main"><img id="gMain" src="https://placehold.co/1200x800?text=Daycare+Photo" alt="Daycare photo"></div>
+        <div id="thumbs" class="thumbs"></div>
+      </div>
+      <div class="info">
+        <div id="dcHours" class="k-meta"><strong>Hours:</strong> —</div>
+        <div id="dcAges" class="k-meta"><strong>Ages:</strong> —</div>
+        <div id="dcFees" class="k-meta"><strong>Fees:</strong> —</div>
+        <div id="dcFeats" class="feats"></div>
+        <div class="lock">Contact, website & maps are shared after you request options on kidlore.</div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="foot">
-      <div class="foot-top">
-        <div class="brand" style="color:#fff"><a href="index.html" class="home-link"><mark style="color:#fff;background:transparent">kidlore</mark></a></div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="brand"><span class="word" style="color:#fff">kidlore</span></div>
       </div>
-      <div class="legal"><span>© 2025 kidlore. All rights reserved.</span></div>
+      <div class="legal">
+        <span>© 2025 kidlore.</span><span>All rights reserved.</span>
+      </div>
     </div>
   </footer>
+
+  <script>
+    const DB = {
+      "early-blossoms": {
+        name: "Early Blossoms",
+        locality: "Gurgaon",
+        hours: "8:00 am – 7:30 pm",
+        ages: "6 months – 8 years",
+        fees: "Up to ₹20,000 (based on meals & hours)",
+        features: ["CCTV","Meals","Transport"],
+        photos: [
+          "https://placehold.co/1200x800?text=Early+Blossoms+1",
+          "https://placehold.co/1200x800?text=Early+Blossoms+2",
+          "https://placehold.co/1200x800?text=Early+Blossoms+3",
+          "https://placehold.co/1200x800?text=Early+Blossoms+4"
+        ]
+      },
+      "little-scholars": {
+        name: "Little Scholars",
+        locality: "Gurgaon",
+        hours: "9:00 am – 7:30 pm (1st & 3rd Saturdays)",
+        ages: "9m+ (Daycare); 1.5–6y (Preschool)",
+        fees: "₹7,500 – ₹14,000",
+        features: ["CCTV","Meals","Transport","After-school"],
+        photos: [
+          "https://placehold.co/1200x800?text=Little+Scholars+1",
+          "https://placehold.co/1200x800?text=Little+Scholars+2",
+          "https://placehold.co/1200x800?text=Little+Scholars+3",
+          "https://placehold.co/1200x800?text=Little+Scholars+4"
+        ]
+      }
+    };
+    function qs(k){ return new URLSearchParams(location.search).get(k); }
+    function el(id){ return document.getElementById(id); }
+    (function init(){
+      const slug = qs('slug') || 'early-blossoms';
+      const data = DB[slug];
+      if(!data){ return; }
+      el('dcName').textContent = data.name;
+      el('dcLocality').textContent = data.locality || 'Gurgaon';
+      el('dcHours').innerHTML = '<strong>Hours:</strong> ' + (data.hours || '—');
+      el('dcAges').innerHTML  = '<strong>Ages:</strong> ' + (data.ages || '—');
+      el('dcFees').innerHTML  = '<strong>Fees:</strong> ' + (data.fees || '—');
+      const feats = el('dcFeats'); feats.innerHTML='';
+      (data.features||[]).forEach(f=>{ const s=document.createElement('span'); s.className='pill'; s.textContent=f; feats.appendChild(s); });
+      const photos = data.photos && data.photos.length ? data.photos : ["https://placehold.co/1200x800?text=Daycare+Photo"];
+      el('gMain').src = photos[0];
+      const t = el('thumbs'); t.innerHTML='';
+      photos.forEach((p,i)=>{ const im=document.createElement('img'); im.src=p; im.alt=data.name+' photo '+(i+1); im.addEventListener('click',()=>{ el('gMain').src=p; }); t.appendChild(im); });
+    })();
+  </script>
 </body>
 </html>
