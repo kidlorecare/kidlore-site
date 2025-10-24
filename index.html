@@ -25,6 +25,8 @@
     </div>
   </div>
 
+  <div id="coming-soon-toast" class="coming-soon-toast" role="status" aria-live="polite" aria-hidden="true">Coming soon</div>
+
   <main class="wrap">
     <!-- HERO -->
     <section class="section hero">
@@ -108,6 +110,39 @@
     </div>
   </footer>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toast = document.getElementById('coming-soon-toast');
+      var hideTimeout = null;
+
+      function showToast() {
+        toast.setAttribute('aria-hidden', 'false');
+        toast.classList.add('is-visible');
+
+        if (hideTimeout) {
+          clearTimeout(hideTimeout);
+        }
+
+        hideTimeout = setTimeout(function () {
+          toast.classList.remove('is-visible');
+          toast.setAttribute('aria-hidden', 'true');
+        }, 2200);
+      }
+
+      document.querySelectorAll('[data-coming-soon]').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          showToast();
+        });
+
+        link.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            showToast();
+          }
+        });
+      });
+    });
+  </script>
   document.addEventListener('DOMContentLoaded', function () {
     var comingSoonLinks = document.querySelectorAll('[data-coming-soon]');
 
