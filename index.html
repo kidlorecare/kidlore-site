@@ -114,38 +114,45 @@
       var toast = document.getElementById('coming-soon-toast');
       var hideTimeout = null;
 
-      function showComingSoonMessage() {
-        if (toast) {
-          toast.setAttribute('aria-hidden', 'false');
-          toast.classList.add('is-visible');
+      function showToast() {
+        toast.setAttribute('aria-hidden', 'false');
+        toast.classList.add('is-visible');
 
-          if (hideTimeout) {
-            clearTimeout(hideTimeout);
-          }
-
-          hideTimeout = setTimeout(function () {
-            toast.classList.remove('is-visible');
-            toast.setAttribute('aria-hidden', 'true');
-          }, 2200);
+        if (hideTimeout) {
+          clearTimeout(hideTimeout);
         }
 
-        window.alert('Coming soon');
+        hideTimeout = setTimeout(function () {
+          toast.classList.remove('is-visible');
+          toast.setAttribute('aria-hidden', 'true');
+        }, 2200);
       }
 
       document.querySelectorAll('[data-coming-soon]').forEach(function (link) {
         link.addEventListener('click', function (event) {
           event.preventDefault();
-          showComingSoonMessage();
+          showToast();
         });
 
         link.addEventListener('keydown', function (event) {
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            showComingSoonMessage();
+            showToast();
           }
         });
       });
     });
   </script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var comingSoonLinks = document.querySelectorAll('[data-coming-soon]');
+
+    comingSoonLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        alert('coming soon');
+      });
+    });
+  });
+</script>
 </body>
 </html>
