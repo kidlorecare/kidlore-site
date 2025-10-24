@@ -16,7 +16,7 @@
     <div class="nav-inner">
       <a class="home-link" href="index.html" aria-label="kidlore home">kidlore</a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#parents">Parents</a>
+        <a href="#parents" aria-disabled="true" data-coming-soon>Parents</a>
         <a href="#browse">Browse centres</a>
         <a href="planner.html">Planner</a>
         <a href="partners.html">For centres</a>
@@ -107,5 +107,17 @@
       </div>
     </div>
   </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var comingSoonLinks = document.querySelectorAll('[data-coming-soon]');
+
+    comingSoonLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        alert('coming soon');
+      });
+    });
+  });
+</script>
 </body>
 </html>
