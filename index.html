@@ -16,7 +16,7 @@
     <div class="nav-inner">
       <a class="home-link" href="index.html" aria-label="kidlore home">kidlore</a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#parents">Parents</a>
+        <a href="#parents" aria-disabled="true" data-coming-soon>Parents</a>
         <a href="#browse">Browse centres</a>
         <a href="planner.html">Planner</a>
         <a href="partners.html">For centres</a>
@@ -24,6 +24,8 @@
       <a class="nav-cta" href="https://forms.gle/9trgCQXMPNPVupe79" target="_blank" rel="noopener">Join waitlist</a>
     </div>
   </div>
+
+  <div id="coming-soon-toast" class="coming-soon-toast" role="status" aria-live="polite" aria-hidden="true">Coming soon</div>
 
   <main class="wrap">
     <!-- HERO -->
@@ -107,5 +109,43 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toast = document.getElementById('coming-soon-toast');
+      var hideTimeout = null;
+
+      function showComingSoonMessage() {
+        if (toast) {
+          toast.setAttribute('aria-hidden', 'false');
+          toast.classList.add('is-visible');
+
+          if (hideTimeout) {
+            clearTimeout(hideTimeout);
+          }
+
+          hideTimeout = setTimeout(function () {
+            toast.classList.remove('is-visible');
+            toast.setAttribute('aria-hidden', 'true');
+          }, 2200);
+        }
+
+        window.alert('Coming soon');
+      }
+
+      document.querySelectorAll('[data-coming-soon]').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          showComingSoonMessage();
+        });
+
+        link.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            showComingSoonMessage();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

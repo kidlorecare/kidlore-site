@@ -82,3 +82,9 @@ footer{background:#0e0f10;color:#f5f5f5;margin-top:72px}
 .foot a{color:#d1d5db;display:block;padding:6px 0;font-size:14px;text-decoration:none}
 .foot a:hover{color:#fff}
 .legal{display:flex;gap:16px;align-items:center;flex-wrap:wrap;color:#9ca3af;font-size:13px;margin-top:12px}
+
+/* TOAST */
+.coming-soon-toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#111827;color:#fff;
+  padding:14px 20px;border-radius:999px;box-shadow:0 18px 40px rgba(15,23,42,.32);font-weight:600;font-size:14px;
+  letter-spacing:.01em;opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:9999}
+.coming-soon-toast.is-visible{opacity:1;pointer-events:auto;transform:translate(-50%, -4px)}
